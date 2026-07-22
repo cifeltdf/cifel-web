@@ -2236,7 +2236,7 @@
             <span class="step-number">02</span>
             <div class="icon-circle"><i data-lucide="pencil-line" width="24"></i></div>
             <h3>Inscribite</h3>
-            <p>Completá tu consulta y recibí toda la información para reservar tu lugar.</p>
+            <p>Solicitud de inscripción</p>
           </article>
           <article class="process-item">
             <span class="step-number">03</span>
@@ -2312,31 +2312,41 @@
 
           <div class="form-row">
             <div class="field">
-              <label for="phone">Teléfono</label>
+              <label for="phone">Whatsapp</label>
+              <input id="phone" name="phone" type="tel" placeholder="+54 9..." autocomplete="tel">
+              <span class="field-error"></span>
+            </div>
+            <div class="form-row">
+            <div class="field">
+              <label for="phone">DNI</label>
               <input id="phone" name="phone" type="tel" placeholder="+54 9..." autocomplete="tel">
               <span class="field-error"></span>
             </div>
             <div class="field">
-              <label for="interest">Me interesa</label>
+              <label for="interest">Curso</label>
               <select id="interest" name="interest">
                 <option value="">Seleccionar una opción</option>
-                <option>Consultas generales</option>
-                <option>Métodos de pago</option>
+                <option>Marketing Digital</option>
                 <option>Community Manager</option>
                 <option>Organización de Eventos</option>
                 <option>Comunicación Visual y Publicidad</option>
                 <option>Comunicación Estratégica y Campañas</option>
                 <option>Creación de Contenido para Redes Sociales</option>
                 <option>Mozo de Salón y Atención Gastronómica</option>
-                <option>Cursos presenciales</option>
-                <option>Cursos ONLINE</option>
               </select>
               <span class="field-error"></span>
             </div>
           </div>
+          </div>
+            <div class="field">
+              <label for="interest">Modalidad</label>
+              <select id="interest" name="interest">
+                <option value="">Seleccionar una opción</option>
+                <option>Presencial</option>
+                <option>Virtual</option>
 
           <div class="field">
-            <label for="message">Tu consulta</label>
+            <label for="message">Inscripción</label>
             <textarea id="message" name="message" placeholder="Contanos brevemente qué necesitás..."></textarea>
             <span class="field-error"></span>
           </div>
@@ -2344,10 +2354,10 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
 
-          <button class="btn btn-primary" type="submit">Enviar consulta <i data-lucide="send" width="17"></i></button>
+          <button class="btn btn-primary" type="submit">Continuar con el pago <i data-lucide="send" width="17"></i></button>
           <div class="form-status" id="formStatus" role="status">
             <i data-lucide="circle-check" width="18"></i>
-            ¡Gracias! Recibimos tu consulta y pronto nos pondremos en contacto.
+            ¡Gracias! Recibimos tu gestión. Pronto nos pondremos en contacto.
           </div>
         </form>
       </div>
