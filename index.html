@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CIFEL - Centro Integral de Formación Educativa y Laboral. Cursos, talleres y certificaciones para transformar tu futuro.">
+  <meta name="theme-color" content="#063554">
+  <title>CIFEL | Formación Educativa y Laboral</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    :root {
+      --navy: #063554;
+      --navy-dark: #032842;
+      --navy-deep: #021f35;
+      --teal: #0798a7;
+      --teal-dark: #057a89;
+      --cyan: #19b6c1;
+      --sky: #dceff7;
+      --ice: #f3f9fb;
+      --white: #ffffff;
+      --ink: #122c40;
+      --muted: #627482;
+      --line: #dce8ed;
+      --shadow: 0 22px 60px rgba(3, 42, 68, .13);
+      --shadow-soft: 0 12px 32px rgba(3, 42, 68, .09);
+      --radius: 26px;
+      --radius-sm: 16px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.6;
+    }
+
+    body.menu-open,
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--teal-dark);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 30px;
+      height: 3px;
+      content: "";
+      border-radius: 99px;
+      background: var(--teal);
+    }
+
+    .section-heading {
+      max-width: 710px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading.center {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .section-heading.center .eyebrow::after {
+      width: 30px;
+      height: 3px;
+      content: "";
+      border-radius: 99px;
+      background: var(--teal);
+    }
+
+    h1,
+    h2,
+    h3,
+    .display-font {
+      font-family: "Barlow Condensed", sans-serif;
+      line-height: .98;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: clamp(2.55rem, 5vw, 4.4rem);
+      font-weight: 800;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .section-heading.center p {
+      margin-inline: auto;
+    }
+
+    .accent {
+      color: var(--teal);
+    }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 23px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      cursor: pointer;
+      font-size: .86rem;
+      font-weight: 800;
+      letter-spacing: .025em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--teal);
+      box-shadow: 0 13px 28px rgba(7, 152, 167, .24);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      box-shadow: 0 16px 32px rgba(7, 152, 167, .3);
+    }
+
+    .btn-outline {
+      color: var(--navy);
+      border-color: rgba(6, 53, 84, .22);
+      background: rgba(255, 255, 255, .8);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal);
+      color: var(--teal-dark);
+    }
+
+    .btn-white {
+      color: var(--navy);
+      background: var(--white);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, .15);
+    }
+
+    .btn-white:hover {
+      color: var(--teal-dark);
+    }
+
+    .icon-circle {
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+    }
+
+    /* Header */
+    .topbar {
+      position: relative;
+      z-index: 60;
+      color: rgba(255,255,255,.86);
+      background: var(--navy-deep);
+      font-size: .72rem;
+    }
+
+    .topbar-inner {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .topbar-links,
+    .topbar-social {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .topbar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: color .2s;
+    }
+
+    .topbar a:hover {
+      color: var(--cyan);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 50;
+      top: 0;
+      border-bottom: 1px solid rgba(6, 53, 84, .08);
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap {
+      min-height: 79px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      min-width: 210px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-symbol {
+      width: 51px;
+      height: 51px;
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--navy);
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.27rem;
+      font-weight: 800;
+      letter-spacing: .28em;
+      line-height: 1;
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+    }
+
+    .nav-link {
+      position: relative;
+      padding: 28px 0;
+      color: #38505f;
+      font-size: .78rem;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .nav-link::after {
+      position: absolute;
+      right: 0;
+      bottom: 19px;
+      left: 0;
+      height: 2px;
+      content: "";
+      border-radius: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transition: transform .2s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--navy);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .header-cta {
+      min-height: 44px;
+      padding-inline: 18px;
+    }
+
+    .menu-toggle {
+      width: 46px;
+      height: 46px;
+      display: none;
+      place-items: center;
+      border: 0;
+      border-radius: 12px;
+      color: var(--navy);
+      background: var(--ice);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 685px;
+      overflow: hidden;
+      background:
+        linear-gradient(122deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.95) 51%, rgba(224,242,248,.9) 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 820px;
+      top: -240px;
+      left: 43%;
+      opacity: .6;
+      background: linear-gradient(135deg, transparent 49%, rgba(6,53,84,.035) 50%, rgba(6,53,84,.035) 68%, transparent 69%);
+      transform: rotate(8deg);
+    }
+
+    .hero::after {
+      right: -155px;
+      bottom: -190px;
+      width: 680px;
+      height: 680px;
+      border-radius: 50%;
+      background: #cce7f3;
+    }
+
+    .dot-grid {
+      position: absolute;
+      z-index: 1;
+      top: 55px;
+      right: max(4vw, 25px);
+      width: 122px;
+      height: 83px;
+      opacity: .72;
+      background-image: radial-gradient(circle, var(--teal) 3px, transparent 3.5px);
+      background-size: 24px 24px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      min-height: 685px;
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      align-items: center;
+      gap: 50px;
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      padding: 8px 13px;
+      border: 1px solid rgba(7, 152, 167, .16);
+      border-radius: 999px;
+      color: var(--teal-dark);
+      background: rgba(7, 152, 167, .07);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 5px rgba(7,152,167,.12);
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      color: var(--navy);
+      font-size: clamp(4.2rem, 7.4vw, 7.1rem);
+      font-weight: 900;
+      letter-spacing: -.042em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 .highlight {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 1px 15px 7px;
+      color: var(--white);
+      background: var(--teal);
+      transform: rotate(-1deg);
+    }
+
+    .hero h1 .highlight::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      content: "";
+      background: linear-gradient(110deg, var(--teal-dark), var(--cyan));
+      clip-path: polygon(2% 8%, 100% 0, 98% 92%, 0 100%);
+    }
+
+    .hero-description {
+      max-width: 560px;
+      margin: 25px 0 29px;
+      color: #4c6270;
+      font-size: 1.06rem;
+    }
+
+    .hero-description strong {
+      color: var(--teal-dark);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 31px;
+      color: var(--muted);
+      font-size: .74rem;
+      font-weight: 600;
+    }
+
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-trust i {
+      color: var(--teal);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 540px;
+    }
+
+    .big-mark {
+      position: absolute;
+      z-index: 1;
+      width: min(520px, 100%);
+      top: 15px;
+      right: -12px;
+      filter: drop-shadow(0 25px 28px rgba(3,42,68,.17));
+    }
+
+    .visual-card {
+      position: absolute;
+      z-index: 3;
+      right: 15px;
+      bottom: 8px;
+      width: 270px;
+      padding: 23px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 22px;
+      background: rgba(255,255,255,.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .visual-card-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .visual-card .icon-circle {
+      width: 47px;
+      height: 47px;
+      flex: 0 0 auto;
+      color: white;
+      background: var(--teal);
+    }
+
+    .visual-card h3 {
+      color: var(--navy);
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .visual-card p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .7rem;
+      line-height: 1.45;
+    }
+
+    .progress {
+      height: 6px;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #e5eef2;
+    }
+
+    .progress span {
+      width: 82%;
+      height: 100%;
+      display: block;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--teal), var(--cyan));
+    }
+
+    .mini-badge {
+      position: absolute;
+      z-index: 4;
+      top: 105px;
+      left: -24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      color: var(--navy);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      font-size: .69rem;
+      font-weight: 800;
+    }
+
+    .mini-badge i {
+      color: var(--teal);
+    }
+
+    .mascot {
+      position: absolute;
+      z-index: 2;
+      right: -26px;
+      bottom: 112px;
+      width: 150px;
+      opacity: .92;
+      transform: rotate(4deg);
+      filter: drop-shadow(0 13px 13px rgba(3,42,68,.17));
+    }
+
+    /* Feature strip */
+    .feature-strip {
+      position: relative;
+      z-index: 5;
+      background: var(--navy);
+    }
+
+    .features {
+      min-height: 142px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+    }
+
+    .feature {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 0 28px;
+      color: white;
+      border-right: 1px solid rgba(255,255,255,.16);
+    }
+
+    .feature:first-child {
+      padding-left: 0;
+    }
+
+    .feature:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .feature .icon-circle {
+      width: 53px;
+      height: 53px;
+      flex: 0 0 auto;
+      border: 2px solid rgba(255,255,255,.7);
+      background: var(--teal);
+    }
+
+    .feature strong {
+      display: block;
+      font-size: .78rem;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .feature small {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255,255,255,.62);
+      font-size: .65rem;
+    }
+
+    /* Courses */
+    .courses-section {
+      padding: 105px 0 115px;
+      background:
+        linear-gradient(145deg, rgba(7,152,167,.025), transparent 40%),
+        var(--white);
+    }
+
+    .courses-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 42px;
+    }
+
+    .filter-btn {
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: white;
+      cursor: pointer;
+      font-size: .7rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--teal);
+      color: white;
+      background: var(--teal);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .course-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(3,42,68,.055);
+      transition: transform .3s ease, box-shadow .3s ease, opacity .25s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .course-card.hidden {
+      display: none;
+    }
+
+    .course-image {
+      position: relative;
+      height: 205px;
+      overflow: hidden;
+      background: var(--sky);
+    }
+
+    .course-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .course-card:hover img {
+      transform: scale(1.055);
+    }
+
+    .course-image::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(to top, rgba(3,42,68,.38), transparent 55%);
+    }
+
+    .course-tag {
+      position: absolute;
+      z-index: 2;
+      top: 15px;
+      left: 15px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: white;
+      background: var(--teal);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .course-body {
+      padding: 24px;
+    }
+
+    .course-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 11px;
+      color: var(--muted);
+      font-size: .66rem;
+      font-weight: 600;
+    }
+
+    .course-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .course-meta i {
+      color: var(--teal);
+    }
+
+    .course-card h3 {
+      min-height: 52px;
+      color: var(--navy);
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .course-card p {
+      min-height: 60px;
+      margin: 13px 0 18px;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.55;
+    }
+
+    .course-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+    }
+
+    .course-mode {
+      color: var(--navy);
+      font-size: .67rem;
+      font-weight: 800;
+    }
+
+    .course-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 0;
+      color: var(--teal-dark);
+      background: none;
+      cursor: pointer;
+      font-size: .7rem;
+      font-weight: 800;
+    }
+
+    .course-link:hover {
+      color: var(--navy);
+    }
+
+    /* About */
+    .about-section {
+      position: relative;
+      overflow: hidden;
+      padding: 115px 0;
+      background: var(--ice);
+    }
+
+    .about-section::before {
+      position: absolute;
+      top: -170px;
+      right: -150px;
+      width: 450px;
+      height: 450px;
+      content: "";
+      border: 80px solid rgba(7,152,167,.045);
+      border-radius: 50%;
+    }
+
+    .about-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: .94fr 1.06fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 555px;
+    }
+
+    .about-image-main {
+      width: 83%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 30px 8px 30px 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image-small {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 48%;
+      height: 230px;
+      overflow: hidden;
+      border: 9px solid var(--ice);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-image-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .experience-badge {
+      position: absolute;
+      top: 38px;
+      right: 5px;
+      width: 137px;
+      height: 137px;
+      display: grid;
+      place-items: center;
+      border: 8px solid var(--ice);
+      border-radius: 50%;
+      color: white;
+      background: var(--teal);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .experience-badge strong {
+      display: block;
+      font-family: "Barlow Condensed";
+      font-size: 2.6rem;
+      line-height: .8;
+    }
+
+    .experience-badge span {
+      display: block;
+      margin-top: 7px;
+      font-size: .55rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .about-copy > p {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+      margin: 30px 0 34px;
+    }
+
+    .about-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--navy);
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .about-item .icon-circle {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 auto;
+      color: white;
+      background: var(--teal);
+    }
+
+    /* Process */
+    .process-section {
+      padding: 105px 0;
+      color: white;
+      background: var(--navy);
+    }
+
+    .process-section h2,
+    .process-section .eyebrow {
+      color: white;
+    }
+
+    .process-section .section-heading p {
+      color: rgba(255,255,255,.67);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .process-item {
+      position: relative;
+      padding: 30px 25px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 20px;
+      background: rgba(255,255,255,.045);
+      transition: transform .25s, background .25s;
+    }
+
+    .process-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,.075);
+    }
+
+    .step-number {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: rgba(255,255,255,.09);
+      font-family: "Barlow Condensed";
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .process-item .icon-circle {
+      width: 51px;
+      height: 51px;
+      margin-bottom: 23px;
+      background: var(--teal);
+    }
+
+    .process-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .process-item p {
+      color: rgba(255,255,255,.63);
+      font-size: .74rem;
+    }
+
+    /* Location CTA */
+    .location-section {
+      padding: 105px 0;
+      background: white;
+    }
+
+    .location-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 385px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      border-radius: 30px;
+      color: white;
+      background: linear-gradient(120deg, var(--teal-dark), var(--teal));
+      box-shadow: var(--shadow);
+    }
+
+    .location-card::before {
+      position: absolute;
+      top: -100px;
+      right: 30%;
+      width: 380px;
+      height: 600px;
+      content: "";
+      opacity: .1;
+      background: white;
+      transform: rotate(25deg);
+    }
+
+    .location-copy {
+      position: relative;
+      z-index: 2;
+      padding: 55px 60px;
+    }
+
+    .location-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .location-copy h2 {
+      max-width: 590px;
+      color: white;
+    }
+
+    .location-copy p {
+      max-width: 570px;
+      margin: 18px 0 27px;
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+    }
+
+    .location-image {
+      align-self: stretch;
+      min-height: 385px;
+      clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .location-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Contact */
+    .contact-section {
+      padding: 110px 0;
+      background: var(--ice);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 70px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 15px;
+      margin-top: 32px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: white;
+    }
+
+    .contact-method .icon-circle {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      color: white;
+      background: var(--teal);
+    }
+
+    .contact-method span {
+      display: block;
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .contact-method strong {
+      display: block;
+      margin-top: 2px;
+      color: var(--navy);
+      font-size: .78rem;
+    }
+
+    .contact-form {
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: .68rem;
+      font-weight: 800;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 49px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      outline: none;
+      color: var(--ink);
+      background: #fbfdfe;
+      font-size: .78rem;
+      transition: border .2s, box-shadow .2s;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(7,152,167,.11);
+    }
+
+    .field.error input,
+    .field.error select,
+    .field.error textarea {
+      border-color: #d64c4c;
+    }
+
+    .field-error {
+      min-height: 15px;
+      display: block;
+      padding-top: 4px;
+      color: #bc3535;
+      font-size: .59rem;
+    }
+
+    .form-status {
+      display: none;
+      align-items: center;
+      gap: 9px;
+      margin-top: 15px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: #126a45;
+      background: #e4f7ef;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    .form-status.show {
+      display: flex;
+    }
+
+    /* Footer */
+    .footer {
+      color: white;
+      background: var(--navy-deep);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.35fr .7fr .75fr 1fr;
+      gap: 45px;
+      padding: 70px 0 55px;
+    }
+
+    .footer-brand .brand-name,
+    .footer-brand .brand-tagline {
+      color: white;
+    }
+
+    .footer-brand p {
+      max-width: 330px;
+      margin-top: 20px;
+      color: rgba(255,255,255,.58);
+      font-size: .75rem;
+    }
+
+    .footer h4 {
+      margin-bottom: 19px;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.58);
+      font-size: .7rem;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .newsletter p {
+      margin-bottom: 13px;
+      color: rgba(255,255,255,.58);
+      font-size: .68rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      min-width: 0;
+      height: 44px;
+      padding: 0 13px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 9px 0 0 9px;
+      outline: none;
+      color: white;
+      background: rgba(255,255,255,.07);
+      font-size: .68rem;
+    }
+
+    .newsletter-form button {
+      width: 47px;
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 0;
+      border-radius: 0 9px 9px 0;
+      color: white;
+      background: var(--teal);
+      cursor: pointer;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      color: white;
+      transition: .2s;
+    }
+
+    .social-links a:hover {
+      border-color: var(--teal);
+      background: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      min-height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(255,255,255,.09);
+      color: rgba(255,255,255,.44);
+      font-size: .63rem;
+    }
+
+    .footer-slogan {
+      color: rgba(255,255,255,.75);
+      font-size: .72rem;
+    }
+
+    .footer-slogan strong {
+      color: var(--cyan);
+    }
+
+    /* WhatsApp */
+    .whatsapp {
+      position: fixed;
+      z-index: 40;
+      right: 22px;
+      bottom: 22px;
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      border: 3px solid white;
+      border-radius: 50%;
+      color: white;
+      background: #22b573;
+      box-shadow: 0 10px 25px rgba(0,0,0,.2);
+      transition: transform .2s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(2,31,53,.72);
+      backdrop-filter: blur(7px);
+    }
+
+    .modal-overlay.open {
+      display: grid;
+    }
+
+    .modal {
+      position: relative;
+      width: min(660px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+      animation: modalIn .25s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(15px) scale(.98); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .modal-header {
+      padding: 31px 34px 23px;
+      color: white;
+      background: linear-gradient(120deg, var(--navy), var(--teal-dark));
+    }
+
+    .modal-header small {
+      display: block;
+      margin-bottom: 7px;
+      color: rgba(255,255,255,.7);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .modal-header h3 {
+      max-width: 520px;
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      color: white;
+      background: rgba(255,255,255,.1);
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 29px 34px 34px;
+    }
+
+    .modal-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+
+    .modal-fact {
+      padding: 13px;
+      border-radius: 10px;
+      background: var(--ice);
+    }
+
+    .modal-fact span {
+      display: block;
+      color: var(--muted);
+      font-size: .56rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .modal-fact strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--navy);
+      font-size: .72rem;
+    }
+
+    .modal-body > p {
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    .modal-topics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin: 22px 0 27px;
+    }
+
+    .modal-topics span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-size: .7rem;
+      font-weight: 700;
+    }
+
+    .modal-topics i {
+      color: var(--teal);
+    }
+
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .main-nav {
+        gap: 18px;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .feature {
+        padding-inline: 16px;
+      }
+
+      .feature small {
+        display: none;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-main {
+        grid-template-columns: 1.2fr .8fr .8fr;
+      }
+
+      .newsletter {
+        grid-column: 1 / -1;
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        display: none;
+      }
+
+      .nav-wrap {
+        min-height: 72px;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .main-nav {
+        position: fixed;
+        top: 72px;
+        right: 0;
+        left: 0;
+        max-height: 0;
+        display: block;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background: white;
+        box-shadow: 0 18px 30px rgba(3,42,68,.1);
+        transition: max-height .3s ease;
+      }
+
+      .main-nav.open {
+        max-height: 450px;
+      }
+
+      .nav-link {
+        display: block;
+        padding: 15px 24px;
+        border-bottom: 1px solid #edf2f4;
+      }
+
+      .nav-link::after {
+        display: none;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 65px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 4;
+      }
+
+      .hero-visual {
+        min-height: 450px;
+        margin-top: -20px;
+      }
+
+      .big-mark {
+        width: 440px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .mini-badge {
+        left: 4%;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+        padding-block: 22px;
+      }
+
+      .feature {
+        min-height: 90px;
+      }
+
+      .feature:nth-child(2) {
+        border-right: 0;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 55px;
+      }
+
+      .about-visual {
+        max-width: 620px;
+      }
+
+      .location-card {
+        grid-template-columns: 1fr;
+      }
+
+      .location-image {
+        min-height: 270px;
+        clip-path: none;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand-symbol {
+        width: 45px;
+        height: 45px;
+      }
+
+      .brand-name {
+        font-size: 1.05rem;
+      }
+
+      .brand-tagline {
+        max-width: 190px;
+        font-size: .42rem;
+      }
+
+      h2 {
+        font-size: 2.8rem;
+      }
+
+      .hero {
+        min-height: 0;
+      }
+
+      .hero-inner {
+        padding-top: 48px;
+        padding-bottom: 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.65rem, 17vw, 5.1rem);
+      }
+
+      .hero-description {
+        font-size: .9rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-trust {
+        gap: 9px 16px;
+      }
+
+      .hero-visual {
+        min-height: 355px;
+      }
+
+      .big-mark {
+        width: 355px;
+      }
+
+      .visual-card {
+        right: 0;
+        bottom: 0;
+        width: 220px;
+        padding: 17px;
+      }
+
+      .mini-badge {
+        top: 80px;
+        left: 0;
+      }
+
+      .mascot {
+        width: 115px;
+        right: -10px;
+        bottom: 92px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature,
+      .feature:first-child,
+      .feature:last-child {
+        padding: 18px 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.13);
+      }
+
+      .feature:last-child {
+        border-bottom: 0;
+      }
+
+      .courses-section,
+      .about-section,
+      .process-section,
+      .location-section,
+      .contact-section {
+        padding: 78px 0;
+      }
+
+      .course-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-image {
+        height: 220px;
+      }
+
+      .about-visual {
+        min-height: 430px;
+      }
+
+      .about-image-main {
+        height: 390px;
+        width: 90%;
+      }
+
+      .about-image-small {
+        height: 180px;
+      }
+
+      .experience-badge {
+        top: 25px;
+        width: 110px;
+        height: 110px;
+      }
+
+      .experience-badge strong {
+        font-size: 2rem;
+      }
+
+      .about-list {
+        grid-template-columns: 1fr;
+      }
+
+      .location-copy {
+        padding: 40px 25px;
+      }
+
+      .contact-grid {
+        gap: 40px;
+      }
+
+      .contact-form {
+        padding: 24px 18px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px 25px;
+      }
+
+      .footer-brand,
+      .newsletter {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: 17px;
+      }
+
+      .modal-header,
+      .modal-body {
+        padding-right: 22px;
+        padding-left: 22px;
+      }
+
+      .modal-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-topics {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp {
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-links">
+        <a href="mailto:cifeltdf@gmail.com"><i data-lucide="mail" width="13"></i> cifeltdf@gmail.com</a>
+        <a href="tel:+542901468082"><i data-lucide="phone" width="13"></i> +54 2901 468 082</a>
+        <span><i data-lucide="map-pin" width="13"></i> Ushuaia, Tierra del Fuego</span>
+      </div>
+      <div class="topbar-social">
+        <span>Seguinos</span>
+        <a href="https://instagram.com/cifeltdf" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" width="14"></i></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i data-lucide="facebook" width="14"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand" aria-label="CIFEL, inicio">
+        <svg class="brand-symbol" viewBox="0 0 100 100" role="img" aria-label="Logo CIFEL">
+          <defs>
+            <linearGradient id="logoTeal" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#16b2bc"/>
+              <stop offset="1" stop-color="#057b89"/>
+            </linearGradient>
+            <linearGradient id="logoNavy" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#0b496c"/>
+              <stop offset="1" stop-color="#032842"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="14" r="11" fill="url(#logoTeal)"/>
+          <path d="M10 18h19l21 22-12 12z" fill="url(#logoNavy)"/>
+          <path d="M90 18H71L50 40l12 12z" fill="url(#logoTeal)"/>
+          <path d="M10 82h19l21-22-12-12z" fill="url(#logoNavy)"/>
+          <path d="M90 82H71L50 60l12-12z" fill="url(#logoTeal)"/>
+        </svg>
+        <span>
+          <span class="brand-name">CIFEL</span>
+          <span class="brand-tagline">Centro Integral de Formación Educativa y Laboral</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a class="nav-link active" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#cursos">Cursos</a>
+        <a class="nav-link" href="#nosotros">Nosotros</a>
+        <a class="nav-link" href="#metodologia">Metodología</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="btn btn-primary header-cta">Reservá tu vacante <i data-lucide="arrow-right" width="16"></i></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="dot-grid" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker"><span></span> Formación para el mundo real</div>
+          <h1>Formate hoy<br>para las oportunidades <span class="highlight">laborales que buscabas</span></h1>
+          <p class="hero-description">
+            Capacitaciones diseñadas para desarrollar habilidades con aplicación real en el mundo laboral. <strong>Formación práctica, docentes especializados y certificación nacional.</strong>.
+            En CIFEL te preparamos para crecer, emprender y destacarte.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cursos" class="btn btn-primary">Conocé nuestros cursos <i data-lucide="arrow-down-right" width="18"></i></a>
+            <a href="#nosotros" class="btn btn-outline"><i data-lucide="play-circle" width="18"></i> Conocé CIFEL</a>
+          </div>
+
+          <div class="hero-trust">
+            <span><i data-lucide="badge-check" width="16"></i> Certificación</span>
+            <span><i data-lucide="users" width="16"></i> Docentes expertos</span>
+            <span><i data-lucide="laptop" width="16"></i> Modalidad flexible</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Identidad visual de CIFEL">
+          <svg class="big-mark" viewBox="0 0 600 600" role="img" aria-label="Símbolo principal de CIFEL">
+            <defs>
+              <linearGradient id="heroNavy" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0c5275"/>
+                <stop offset="1" stop-color="#032842"/>
+              </linearGradient>
+              <linearGradient id="heroTeal" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#20bcc6"/>
+                <stop offset="1" stop-color="#057c8c"/>
+              </linearGradient>
+            </defs>
+            <circle cx="300" cy="78" r="58" fill="url(#heroTeal)"/>
+            <path d="M70 100h110l120 122-70 72z" fill="url(#heroNavy)"/>
+            <path d="M530 100H420L300 222l70 72z" fill="url(#heroTeal)"/>
+            <path d="M70 500h110l120-122-70-72z" fill="url(#heroNavy)"/>
+            <path d="M530 500H420L300 378l70-72z" fill="url(#heroTeal)"/>
+          </svg>
+
+          <div class="mini-badge">
+            <i data-lucide="award" width="19"></i>
+            Formación de calidad
+          </div>
+
+          <svg class="mascot" viewBox="0 0 180 200" aria-label="Pulpo, mascota de CIFEL">
+            <defs>
+              <linearGradient id="octo" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#25c1d1"/>
+                <stop offset="1" stop-color="#087e9d"/>
+              </linearGradient>
+            </defs>
+            <path d="M61 99c-25 9-26 27-45 25-7-1-12-8-8-14 3-5 9-2 8 2 0 4 6 4 10-1 8-11 12-23 29-29z" fill="url(#octo)"/>
+            <path d="M67 108c-18 18-10 34-25 43-7 4-15 1-15-6 0-6 7-6 8-2 1 4 7 1 9-5 4-13 3-26 17-39z" fill="url(#octo)"/>
+            <path d="M80 112c-8 23 5 34-3 49-4 7-13 8-16 2-2-5 4-9 7-5 3 3 7-1 7-8-1-13-6-24 0-42z" fill="url(#octo)"/>
+            <path d="M101 111c10 23-2 35 8 49 5 6 14 6 16 0 2-6-5-8-8-4-2 4-7 0-7-7 0-13 4-25-3-42z" fill="url(#octo)"/>
+            <path d="M116 106c18 18 11 34 27 42 7 4 15 0 14-7-1-5-8-5-9 0-1 4-7 1-9-5-5-13-4-26-18-38z" fill="url(#octo)"/>
+            <path d="M123 97c25 8 27 26 46 23 8-1 11-9 7-14-4-5-9-1-8 3 1 4-6 5-10 0-8-11-13-22-30-28z" fill="url(#octo)"/>
+            <path d="M45 80C45 43 63 20 90 20s45 23 45 60c0 29-18 48-45 48S45 109 45 80z" fill="url(#octo)"/>
+            <ellipse cx="72" cy="73" rx="11" ry="9" fill="#fff"/>
+            <ellipse cx="108" cy="73" rx="11" ry="9" fill="#fff"/>
+            <circle cx="74" cy="74" r="4" fill="#032842"/>
+            <circle cx="106" cy="74" r="4" fill="#032842"/>
+            <path d="M74 92c9 8 23 8 32 0" fill="none" stroke="#04344f" stroke-width="4" stroke-linecap="round"/>
+            <path d="M58 58h28l-3 18H61zM94 58h28l-3 18H97z" fill="#071b28" opacity=".94"/>
+            <path d="M85 64h10" stroke="#071b28" stroke-width="4"/>
+          </svg>
+
+          <div class="visual-card">
+            <div class="visual-card-top">
+              <div class="icon-circle"><i data-lucide="graduation-cap" width="24"></i></div>
+              <div>
+                <h3>Tu próximo nivel</h3>
+                <p>Aprendé. Crecé. Transformá tu futuro.</p>
+              </div>
+            </div>
+            <div class="progress" aria-label="Progreso ilustrativo"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-strip" aria-label="Beneficios de CIFEL">
+      <div class="container features">
+        <article class="feature">
+          <div class="icon-circle"><i data-lucide="book-open" width="25"></i></div>
+          <div><strong>Cursos y talleres</strong><small>Aprendizaje práctico</small></div>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><i data-lucide="users-round" width="25"></i></div>
+          <div><strong>Formación de calidad</strong><small>Docentes especializados</small></div>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><i data-lucide="globe-2" width="25"></i></div>
+          <div><strong>Certificaciones</strong><small>Nacionales e internacionales</small></div>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><i data-lucide="chart-no-axes-combined" width="25"></i></div>
+          <div><strong>Herramientas para crecer</strong><small>Emprendé y destacate</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="courses-section" id="cursos">
+      <div class="container">
+        <div class="courses-top">
+          <div class="section-heading">
+            <span class="eyebrow">Ver cursos</span>
+            <h2>Capacitaciones para <span class="accent">avanzar</span></h2>
+            <p>Programas actuales, prácticos y orientados a desarrollar habilidades que podés aplicar desde el primer día.</p>
+          </div>
+        </div>
+
+        <div class="filter-buttons" role="group" aria-label="Filtrar capacitaciones">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="digital">Gestión Digital y Social</button>
+          <button class="filter-btn" data-filter="laboral">Publicidad y Marketing</button>
+          <button class="filter-btn" data-filter="emprendimiento">Formación para el trabajo</button>
+        </div>
+
+        <div class="course-grid">
+          <article class="course-card" data-category="digital">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=82" alt="Equipo trabajando en estrategia digital">
+              <span class="course-tag">Más elegido</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Community Manager</h3>
+              <p>Aprendé a gestionar redes sociales, crear estrategias y potenciar marcas con herramientas profesionales.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
+                <button class="course-link" data-course="Comunicación Visual y Publicidad" data-duration="8 semanas" data-mode="Online en vivo" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="laboral">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82" alt="Profesionales reunidos en una mesa de trabajo">
+              <span class="course-tag">Nuevo</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Comunicación Visual y Publicidad</h3>
+              <p>Dominá estrategias de posicionamiento, publicidad online y ventas digitales.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
+                <button class="course-link" data-course="Community Manager" data-duration="6 semanas" data-mode="Híbrido" data-level="Todos los niveles">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=82" alt="Jóvenes desarrollando un proyecto">
+              <span class="course-tag">Práctico</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Creación de Contenido para Redes Sociales</h3>
+              <p>Creá contenido atractivo para Instagram, Facebook, TikTok y otras plataformas.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
+                <button class="course-link" data-course="Creación de Contenido para Redes Sociales" data-duration="10 semanas" data-mode="Presencial" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=82" alt="Panel de análisis de datos">
+              <span class="course-tag">Alta demanda</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Organización de Eventos</h3>
+              <p>Planificá eventos sociales, institucionales y empresariales con una metodología profesional.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
+                <button class="course-link" data-course="Organización de Eventos" data-duration="7 semanas" data-mode="Online en vivo" data-level="Intermedio">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="laboral">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=82" alt="Presentación profesional">
+              <span class="course-tag">Taller</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Comunicación Estratégica y Campañas</h3>
+              <p>Aprendé a comunicar, persuadir y desarrollar campañas con impacto.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
+                <button class="course-link" data-course="Comunicación Estratégica y Campañas" data-duration="4 semanas" data-mode="Presencial" data-level="Todos los niveles">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento">
+            <div class="course-image">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=82" alt="Planificación financiera de un proyecto">
+              <span class="course-tag">Salida Laboral Inmediata</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 5 semanas</span>
+                <span><i data-lucide="signal" width="14"></i> Intermedio</span>
+              </div>
+              <h3>Mozo de Salón y Atención Gastronómica</h3>
+              <p>Capacitación práctica para brindar un servicio gastronómico profesional y de excelencia.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales o Mixto -Clases virtuales y prácticas presenciales- </span>
+                <button class="course-link" data-course="Mozo de Salón y Atención Gastronómica" data-duration="6 semanas" data-mode="Híbrido" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="about-image-main">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85" alt="Clase de formación profesional">
+          </div>
+          <div class="about-image-small">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="Estudiante trabajando con una computadora">
+          </div>
+          <div class="experience-badge">
+            <div><strong>100%</strong><span>Enfoque<br>práctico</span></div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">Sobre CIFEL</span>
+          <h2>Te formamos para los desafíos del <span class="accent">mañana</span></h2>
+          <p>
+            En CIFEL impulsamos el crecimiento profesional mediante capacitaciones modernas, prácticas y orientadas al trabajo. Nuestro objetivo es brindar herramientas concretas para acceder a nuevas oportunidades laborales, emprender o potenciar el perfil profesional de cada estudiante.
+          </p>
+
+          <div class="about-list">
+            <div class="about-item">
+              <span class="icon-circle"><i data-lucide="check" width="17"></i></span>
+              Contenidos actualizados
+            </div>
+            <div class="about-item">
+              <span class="icon-circle"><i data-lucide="check" width="17"></i></span>
+              Grupos personalizados
+            </div>
+            <div class="about-item">
+              <span class="icon-circle"><i data-lucide="check" width="17"></i></span>
+              Aplicación inmediata
+            </div>
+            <div class="about-item">
+              <span class="icon-circle"><i data-lucide="check" width="17"></i></span>
+              Acompañamiento docente
+            </div>
+          </div>
+
+          <a href="#contacto" class="btn btn-primary">Ver cursos <i data-lucide="arrow-right" width="17"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="metodologia">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow">Una experiencia simple</span>
+          <h2>Tu camino para <span class="accent">crecer</span></h2>
+          <p>Te acompañamos desde la elección de tu capacitación hasta la aplicación de lo aprendido.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-item">
+            <span class="step-number">01</span>
+            <div class="icon-circle"><i data-lucide="search" width="24"></i></div>
+            <h3>Elegí</h3>
+            <p>Encontrá la capacitación que mejor se adapta a tus objetivos y disponibilidad.</p>
+          </article>
+          <article class="process-item">
+            <span class="step-number">02</span>
+            <div class="icon-circle"><i data-lucide="pencil-line" width="24"></i></div>
+            <h3>Inscribite</h3>
+            <p>Completá tu consulta y recibí toda la información para reservar tu lugar.</p>
+          </article>
+          <article class="process-item">
+            <span class="step-number">03</span>
+            <div class="icon-circle"><i data-lucide="brain-circuit" width="24"></i></div>
+            <h3>Aprendé</h3>
+            <p>Participá en clases dinámicas, prácticas y guiadas por profesionales.</p>
+          </article>
+          <article class="process-item">
+            <span class="step-number">04</span>
+            <div class="icon-circle"><i data-lucide="rocket" width="24"></i></div>
+            <h3>Transformá</h3>
+            <p>Aplicá nuevas herramientas para potenciar tu trabajo, carrera o proyecto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section">
+      <div class="container">
+        <div class="location-card">
+          <div class="location-copy">
+            <span class="location-label"><i data-lucide="map-pin" width="17"></i> Muy pronto en Ushuaia</span>
+            <h2>Formación que transforma, futuro que creás.</h2>
+            <p>Estamos preparando un espacio para aprender, compartir y generar nuevas oportunidades en el fin del mundo.</p>
+            <a href="#contacto" class="btn btn-white">Quiero recibir novedades <i data-lucide="bell" width="17"></i></a>
+          </div>
+          <div class="location-image">
+            <img src="https://images.unsplash.com/photo-1577801599718-f4e3ad3fc794?auto=format&fit=crop&w=1100&q=85" alt="Paisaje de montaña en Tierra del Fuego">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Hablemos</span>
+          <h2>¿Listo para <span class="accent">comenzar?</span></h2>
+          <p>Completá el formulario o escribinos por WhatsApp. Te ayudaremos a elegir la capacitación ideal para vos.</p>
+
+          <div class="contact-methods">
+            <a class="contact-method" href="mailto:cifeltdf@gmail.com">
+              <span class="icon-circle"><i data-lucide="mail" width="20"></i></span>
+              <div><span>Correo electrónico</span><strong>cifeltdf@gmail.com</strong></div>
+            </a>
+            <a class="contact-method" href="tel:+542901468082">
+              <span class="icon-circle"><i data-lucide="phone" width="20"></i></span>
+              <div><span>Teléfono / WhatsApp</span><strong>+54 2901 468 082</strong></div>
+            </a>
+            <div class="contact-method">
+              <span class="icon-circle"><i data-lucide="map-pin" width="20"></i></span>
+              <div><span>Próxima sede</span><strong>Ushuaia, Tierra del Fuego Modalidad presencial y virtual</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form"
+      id="contactForm"
+      action="https://formsubmit.co/cifeltdf@gmail.com"
+      method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Nombre y apellido</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" autocomplete="name">
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email">
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" placeholder="+54 9..." autocomplete="tel">
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="interest">Me interesa</label>
+              <select id="interest" name="interest">
+                <option value="">Seleccionar una opción</option>
+                <option>Consultas generales</option>
+                <option>Métodos de pago</option>
+                <option>Community Manager</option>
+                <option>Organización de Eventos</option>
+                <option>Comunicación Visual y Publicidad</option>
+                <option>Comunicación Estratégica y Campañas</option>
+                <option>Creación de Contenido para Redes Sociales</option>
+                <option>Mozo de Salón y Atención Gastronómica</option>
+                <option>Cursos presenciales</option>
+                <option>Cursos ONLINE</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Tu consulta</label>
+            <textarea id="message" name="message" placeholder="Contanos brevemente qué necesitás..."></textarea>
+            <span class="field-error"></span>
+          </div>
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web CIFEL">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <button class="btn btn-primary" type="submit">Enviar consulta <i data-lucide="send" width="17"></i></button>
+          <div class="form-status" id="formStatus" role="status">
+            <i data-lucide="circle-check" width="18"></i>
+            ¡Gracias! Recibimos tu consulta y pronto nos pondremos en contacto.
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a href="#inicio" class="brand">
+          <svg brand-symbol{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+}>
+            <circle cx="50" cy="14" r="11" fill="#18b5c0"/>
+            <path d="M10 18h19l21 22-12 12zM10 82h19l21-22-12-12z" fill="#ffffff"/>
+            <path d="M90 18H71L50 40l12 12zM90 82H71L50 60l12-12z" fill="#18b5c0"/>
+          </svg>
+          <span>
+            <span class="brand-name">CIFEL</span>
+            <span class="brand-tagline">Centro Integral de Formación Educativa y Laboral</span>
+          </span>
+        </a>
+        <p>CIFEL
+
+Centro Integral de Formación Educativa y Laboral
+
+📍 Ushuaia · Tierra del Fuego
+
+📧 cifeltdf@gmail.com
+
+📱 +54 9 2901 468082</p>
+        <div class="social-links">
+          <a href="https://instagram.com/cifeltdf" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" width="17"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i data-lucide="facebook" width="17"></i></a>
+          <a href="https://linkedin.com/company/cifeltdf" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin" width="17"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#cursos">Capacitaciones</a>
+          <a href="#nosotros">Sobre CIFEL</a>
+          <a href="#metodologia">Metodología</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Formación</h4>
+        <div class="footer-links">
+          <a href="#cursos">Gestión Digital y Social</a>
+          <a href="#cursos">Publicidad y Marketing</a>
+          <a href="#cursos">Formación para el trabajo</a>
+          <a href="#contacto"></a>
+          <a href="#contacto"></a>
+        </div>
+      </div>
+
+      <div class="newsletter">
+        <h4></h4>
+        <p>Envianos tu mail en caso de estes teniendo algún error al ingresar datos</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" aria-label="Tu correo electrónico" placeholder="Tu correo electrónico" required>
+          <button type="submit" aria-label="Suscribirme"><i data-lucide="arrow-right" width="18"></i></button>
+        </form>
+        <p id="newsletterStatus" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> CIFEL. Todos los derechos reservados.</span>
+      <span class="footer-slogan">Aprendé. Crecé. <strong>Transformá tu futuro.</strong></span>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/542901468082?text=Hola%20CIFEL,%20quisiera%20recibir%20información" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i data-lucide="message-circle" width="27"></i>
+  </a>
+
+  <div class="modal-overlay" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <small>Programa de capacitación</small>
+        <h3 id="modalTitle">Curso</h3>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar"><i data-lucide="x" width="20"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-facts">
+          <div class="modal-fact"><span>Duración</span><strong id="modalDuration"></strong></div>
+          <div class="modal-fact"><span>Modalidad</span><strong id="modalMode"></strong></div>
+          <div class="modal-fact"><span>Nivel</span><strong id="modalLevel"></strong></div>
+        </div>
+        <p>Una capacitación dinámica con contenidos actualizados, actividades prácticas y acompañamiento profesional para convertir lo aprendido en resultados concretos.</p>
+        <div class="modal-topics">
+          <span><i data-lucide="circle-check" width="16"></i> Clases con especialistas</span>
+          <span><i data-lucide="circle-check" width="16"></i> Material descargable</span>
+          <span><i data-lucide="circle-check" width="16"></i> Actividades prácticas</span>
+          <span><i data-lucide="circle-check" width="16"></i> Certificado final</span>
+        </div>
+        <a href="#contacto" class="btn btn-primary" id="modalCta">Solicitar información <i data-lucide="arrow-right" width="17"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+
+      const body = document.body;
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+
+      menuToggle.addEventListener("click", () => {
+        const open = mainNav.classList.toggle("open");
+        body.classList.toggle("menu-open", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        menuToggle.innerHTML = open
+          ? '<i data-lucide="x"></i>'
+          : '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+
+      document.querySelectorAll(".main-nav a").forEach(link => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("open");
+          body.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+          lucide.createIcons();
+        });
+      });
+
+      const sections = [...document.querySelectorAll("main section[id]")];
+      const navLinks = [...document.querySelectorAll(".nav-link")];
+
+      const setActiveLink = () => {
+        let current = "inicio";
+        const scrollPosition = window.scrollY + 160;
+        sections.forEach(section => {
+          if (section.offsetTop <= scrollPosition) current = section.id;
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+        });
+      };
+
+      window.addEventListener("scroll", setActiveLink, { passive: true });
+      setActiveLink();
+
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const courseCards = document.querySelectorAll(".course-card");
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          const filter = button.dataset.filter;
+
+          courseCards.forEach(card => {
+            const show = filter === "all" || card.dataset.category === filter;
+            card.classList.toggle("hidden", !show);
+          });
+        });
+      });
+
+      const modalOverlay = document.getElementById("courseModal");
+      const modalClose = document.getElementById("modalClose");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDuration = document.getElementById("modalDuration");
+      const modalMode = document.getElementById("modalMode");
+      const modalLevel = document.getElementById("modalLevel");
+      const modalCta = document.getElementById("modalCta");
+      let previousFocus = null;
+
+      function closeModal() {
+        modalOverlay.classList.remove("open");
+        body.classList.remove("modal-open");
+        if (previousFocus) previousFocus.focus();
+      }
+
+      document.querySelectorAll(".course-link").forEach(button => {
+        button.addEventListener("click", () => {
+          previousFocus = button;
+          modalTitle.textContent = button.dataset.course;
+          modalDuration.textContent = button.dataset.duration;
+          modalMode.textContent = button.dataset.mode;
+          modalLevel.textContent = button.dataset.level;
+          modalOverlay.classList.add("open");
+          body.classList.add("modal-open");
+          modalClose.focus();
+        });
+      });
+
+      modalClose.addEventListener("click", closeModal);
+      modalCta.addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", event => {
+        if (event.target === modalOverlay) closeModal();
+      });
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && modalOverlay.classList.contains("open")) {
+          closeModal();
+        }
+      });
+
+      const contactForm = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+
+      const validators = {
+        name: value => value.trim().length >= 3 ? "" : "Ingresá tu nombre completo.",
+        email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? "" : "Ingresá un correo válido.",
+        phone: value => value.trim().length >= 7 ? "" : "Ingresá un teléfono válido.",
+        interest: value => value ? "" : "Seleccioná una opción.",
+        message: value => value.trim().length >= 10 ? "" : "Contanos un poco más sobre tu consulta."
+      };
+
+      contactForm.addEventListener("submit", event => {
+        event.preventDefault();
+        formStatus.classList.remove("show");
+        let valid = true;
+
+        Object.entries(validators).forEach(([name, validator]) => {
+          const input = contactForm.elements[name];
+          const field = input.closest(".field");
+          const error = validator(input.value);
+          field.classList.toggle("error", Boolean(error));
+          field.querySelector(".field-error").textContent = error;
+          if (error) valid = false;
+        });
+
+        if (valid) {
+    contactForm.submit();
+}
+      });
+
+      contactForm.querySelectorAll("input, select, textarea").forEach(input => {
+        input.addEventListener("input", () => {
+          const validator = validators[input.name];
+          if (!validator) return;
+          const field = input.closest(".field");
+          const error = validator(input.value);
+          field.classList.toggle("error", Boolean(error));
+          field.querySelector(".field-error").textContent = error;
+        });
+      });
+
+      const newsletterForm = document.getElementById("newsletterForm");
+      const newsletterStatus = document.getElementById("newsletterStatus");
+
+      newsletterForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const input = newsletterForm.querySelector("input");
+        if (!input.checkValidity()) {
+          newsletterStatus.textContent = "Ingresá un correo electrónico válido.";
+          newsletterStatus.style.color = "#ff9d9d";
+          input.focus();
+          return;
+        }
+        newsletterStatus.textContent = "¡Listo! Te contactaremos";
+        newsletterStatus.style.color = "#58d9c0";
+        newsletterForm.reset();
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
