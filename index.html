@@ -2273,9 +2273,9 @@
     <section class="contact-section" id="contacto">
       <div class="container contact-grid">
         <div class="contact-info">
-          <span class="eyebrow">Hablemos</span>
+          <span class="eyebrow">Inscribite hoy</span>
           <h2>¿Listo para <span class="accent">comenzar?</span></h2>
-          <p>Completá el formulario o escribinos por WhatsApp. Te ayudaremos a elegir la capacitación ideal para vos.</p>
+          <p>Completá tus datos para reservar tu vacante. Al finalizar serás dirigido a Mercado Pago para realizar el pago de la inscripción.</p>
 
           <div class="contact-methods">
             <a class="contact-method" href="mailto:cifeltdf@gmail.com">
@@ -2311,50 +2311,67 @@
           </div>
 
           <div class="form-row">
-            <div class="field">
-              <label for="phone">Whatsapp</label>
-              <input id="phone" name="phone" type="tel" placeholder="+54 9..." autocomplete="tel">
-              <span class="field-error"></span>
-            </div>
-            <div class="form-row">
-            <div class="field">
-              <label for="phone">DNI</label>
-              <input id="phone" name="phone" type="tel" placeholder="+54 9..." autocomplete="tel">
-              <span class="field-error"></span>
-            </div>
-            <div class="field">
-              <label for="interest">Curso</label>
-              <select id="interest" name="interest">
-                <option value="">Seleccionar una opción</option>
-                <option>Marketing Digital</option>
+
+  <div class="field">
+    <label for="phone">WhatsApp</label>
+    <input id="phone" name="phone" type="tel" placeholder="+54 9..." autocomplete="tel" required>
+    <span class="field-error"></span>
+  </div>
+
+  <div class="field">
+    <label for="dni">DNI</label>
+    <input
+        id="dni"
+        name="dni"
+        type="text"
+        placeholder="Tu DNI"
+        required>
+    <span class="field-error"></span>
+</div>
+
+<div class="form-row">
+
+  <div class="field">
+    <label for="interest">Curso</label>
+    <select id="interest" name="interest">
+                <option value="">Seleccioná un curso</option>
                 <option>Community Manager</option>
-                <option>Organización de Eventos</option>
                 <option>Comunicación Visual y Publicidad</option>
-                <option>Comunicación Estratégica y Campañas</option>
+                <option>Inteligencia Artificial aplicada al Trabajo</option>
+                <option>Marketing Digital</option>
                 <option>Creación de Contenido para Redes Sociales</option>
+                <option>Organización de Eventos</option>
+                <option>Comunicación Estratégica y Campañas</option>
                 <option>Mozo de Salón y Atención Gastronómica</option>
+
               </select>
+
               <span class="field-error"></span>
             </div>
           </div>
-          </div>
-            <div class="field">
-              <label for="interest">Modalidad</label>
-              <select id="interest" name="interest">
-                <option value="">Seleccionar una opción</option>
-                <option>Presencial</option>
-                <option>Virtual</option>
 
           <div class="field">
-            <label for="message">Inscripción</label>
-            <textarea id="message" name="message" placeholder="Contanos brevemente qué necesitás..."></textarea>
+            <label for="message">Observaciones (opcional)</label>
+            <textarea id="message" name="message" placeholder="Si querés, dejanos alguna observación..."></textarea>
             <span class="field-error"></span>
           </div>
           <input type="hidden" name="_subject" value="Nueva consulta desde la web CIFEL">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <div style="background:#eef9fb;border:1px solid #bfe9ef;border-radius:12px;padding:16px;margin:20px 0;">
+<strong>Promoción de Lanzamiento</strong><br><br>
+
+✔ Matrícula anual incluida<br>
+✔ Certificación Nacional<br>
+✔ Acceso a la capacitación elegida<br><br>
+
+<strong>Total a pagar: $67.000</strong>
+</div>
 
           <button class="btn btn-primary" type="submit">Continuar con el pago <i data-lucide="send" width="17"></i></button>
+          <p style="font-size:14px;text-align:center;margin-top:15px;">
+Al continuar serás dirigido a Mercado Pago para completar tu inscripción de forma segura.
+</p>
           <div class="form-status" id="formStatus" role="status">
             <i data-lucide="circle-check" width="18"></i>
             ¡Gracias! Recibimos tu gestión. Pronto nos pondremos en contacto.
@@ -2572,31 +2589,18 @@ Centro Integral de Formación Educativa y Laboral
       const formStatus = document.getElementById("formStatus");
 
       const validators = {
-        name: value => value.trim().length >= 3 ? "" : "Ingresá tu nombre completo.",
-        email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? "" : "Ingresá un correo válido.",
-        phone: value => value.trim().length >= 7 ? "" : "Ingresá un teléfono válido.",
-        interest: value => value ? "" : "Seleccioná una opción.",
-        message: value => value.trim().length >= 10 ? "" : "Contanos un poco más sobre tu consulta."
-      };
+  name: value => value.trim().length >= 3 ? "" : "Ingresá tu nombre completo.",
+  email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? "" : "Ingresá un correo válido.",
+  phone: value => value.trim().length >= 7 ? "" : "Ingresá un teléfono válido.",
+  dni: value => value.trim().length >= 7 ? "" : "Ingresá tu DNI.",
+  interest: value => value ? "" : "Seleccioná un curso.",
+  message: value => ""
+};
 
-      contactForm.addEventListener("submit", event => {
-        event.preventDefault();
-        formStatus.classList.remove("show");
-        let valid = true;
-
-        Object.entries(validators).forEach(([name, validator]) => {
-          const input = contactForm.elements[name];
-          const field = input.closest(".field");
-          const error = validator(input.value);
-          field.classList.toggle("error", Boolean(error));
-          field.querySelector(".field-error").textContent = error;
-          if (error) valid = false;
-        });
-
-        if (valid) {
-    contactForm.submit();
-}
-      });
+      contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    window.location.href = "https://mpago.la/1q6ktjb";
+});
 
       contactForm.querySelectorAll("input, select, textarea").forEach(input => {
         input.addEventListener("input", () => {
