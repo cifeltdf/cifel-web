@@ -512,16 +512,18 @@
     }
 
     .hero-visual {
-      position: relative;
-      min-height: 540px;
-    }
+    position: relative;
+    min-height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .hero-image{
     width:100%;
-    height:540px;
-    object-fit:cover;
+    max-width:640px;
+    display:block;
     border-radius:28px;
     box-shadow:0 30px 70px rgba(3,40,66,.20);
-    display:block;
 }
     .big-mark {
       position: absolute;
@@ -1128,11 +1130,19 @@
       grid-template-columns: .82fr 1.18fr;
       gap: 70px;
     }
+.contact-banner{
+    width:100%;
+    display:block;
+    border-radius:24px;
+    margin-bottom:30px;
+    box-shadow:0 25px 60px rgba(3,40,66,.18);
+}
 
-    .contact-info p {
+.contact-info p {
       color: var(--muted);
       font-size: .9rem;
-    }
+}
+    
 
     .contact-methods {
       display: grid;
@@ -1783,9 +1793,16 @@
         height: 220px;
       }
 
-      .about-visual {
-        min-height: 430px;
-      }
+      .about-visual{
+    position:relative;
+}
+
+.about-cifel-image{
+    width:100%;
+    display:block;
+    border-radius:28px;
+    box-shadow:0 28px 70px rgba(3,40,66,.18);
+}
 
       .about-image-main {
         height: 390px;
@@ -1963,44 +1980,17 @@
         </div>
 
         <div class="hero-visual">
-    <img src="assets/img/hero-cifel.png" alt="CIFEL" class="hero-image">
+
+    <img src="assets/img/hero-cifel.png"
+         alt="Estudiantes de CIFEL"
+         class="hero-image">
+
+    <div class="mini-badge">
+        <i data-lucide="award" width="19"></i>
+        Formación de calidad
+    </div>
+
 </div>
-
-          <svg class="mascot" viewBox="0 0 180 200" aria-label="Pulpo, mascota de CIFEL">
-            <defs>
-              <linearGradient id="octo" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#25c1d1"/>
-                <stop offset="1" stop-color="#087e9d"/>
-              </linearGradient>
-            </defs>
-            <path d="M61 99c-25 9-26 27-45 25-7-1-12-8-8-14 3-5 9-2 8 2 0 4 6 4 10-1 8-11 12-23 29-29z" fill="url(#octo)"/>
-            <path d="M67 108c-18 18-10 34-25 43-7 4-15 1-15-6 0-6 7-6 8-2 1 4 7 1 9-5 4-13 3-26 17-39z" fill="url(#octo)"/>
-            <path d="M80 112c-8 23 5 34-3 49-4 7-13 8-16 2-2-5 4-9 7-5 3 3 7-1 7-8-1-13-6-24 0-42z" fill="url(#octo)"/>
-            <path d="M101 111c10 23-2 35 8 49 5 6 14 6 16 0 2-6-5-8-8-4-2 4-7 0-7-7 0-13 4-25-3-42z" fill="url(#octo)"/>
-            <path d="M116 106c18 18 11 34 27 42 7 4 15 0 14-7-1-5-8-5-9 0-1 4-7 1-9-5-5-13-4-26-18-38z" fill="url(#octo)"/>
-            <path d="M123 97c25 8 27 26 46 23 8-1 11-9 7-14-4-5-9-1-8 3 1 4-6 5-10 0-8-11-13-22-30-28z" fill="url(#octo)"/>
-            <path d="M45 80C45 43 63 20 90 20s45 23 45 60c0 29-18 48-45 48S45 109 45 80z" fill="url(#octo)"/>
-            <ellipse cx="72" cy="73" rx="11" ry="9" fill="#fff"/>
-            <ellipse cx="108" cy="73" rx="11" ry="9" fill="#fff"/>
-            <circle cx="74" cy="74" r="4" fill="#032842"/>
-            <circle cx="106" cy="74" r="4" fill="#032842"/>
-            <path d="M74 92c9 8 23 8 32 0" fill="none" stroke="#04344f" stroke-width="4" stroke-linecap="round"/>
-            <path d="M58 58h28l-3 18H61zM94 58h28l-3 18H97z" fill="#071b28" opacity=".94"/>
-            <path d="M85 64h10" stroke="#071b28" stroke-width="4"/>
-          </svg>
-
-          <div class="visual-card">
-            <div class="visual-card-top">
-              <div class="icon-circle"><i data-lucide="graduation-cap" width="24"></i></div>
-              <div>
-                <h3>Tu próximo nivel</h3>
-                <p>Aprendé. Crecé. Transformá tu futuro.</p>
-              </div>
-            </div>
-            <div class="progress" aria-label="Progreso ilustrativo"><span></span></div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="feature-strip" aria-label="Beneficios de CIFEL">
@@ -2109,11 +2099,11 @@
                 <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
                 <span><i data-lucide="signal" width="14"></i> Inicial</span>
               </div>
-              <h3>Organización de Eventos</h3>
+              <h3>Producción Integral de Eventos</h3>
               <p>Planificá eventos sociales, institucionales y empresariales con una metodología profesional.</p>
               <div class="course-footer">
                 <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
-                <button class="course-link" data-course="Organización de Eventos" data-duration="7 semanas" data-mode="Online en vivo" data-level="Intermedio">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <button class="course-link" data-course="Producción Integral de Eventos" data-duration="7 semanas" data-mode="Online en vivo" data-level="Intermedio">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2161,17 +2151,13 @@
 
     <section class="about-section" id="nosotros">
       <div class="container about-grid">
+        
         <div class="about-visual">
-          <div class="about-image-main">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85" alt="Clase de formación profesional">
-          </div>
-          <div class="about-image-small">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="Estudiante trabajando con una computadora">
-          </div>
-          <div class="experience-badge">
-            <div><strong>100%</strong><span>Enfoque<br>práctico</span></div>
-          </div>
-        </div>
+    <img
+        src="assets/img/about-cifel.png"
+        class="about-cifel-image"
+        alt="Capacitación en CIFEL">
+</div>
 
         <div class="about-copy">
           <span class="eyebrow">Sobre CIFEL</span>
@@ -2251,7 +2237,7 @@
             <a href="#contacto" class="btn btn-white">Quiero recibir novedades <i data-lucide="bell" width="17"></i></a>
           </div>
           <div class="location-image">
-            <img src="https://images.unsplash.com/photo-1577801599718-f4e3ad3fc794?auto=format&fit=crop&w=1100&q=85" alt="Paisaje de montaña en Tierra del Fuego">
+            <img src="assets/img/about/about-classroom.webp" alt="Capacitación profesional en CIFEL">
           </div>
         </div>
       </div>
@@ -2260,6 +2246,9 @@
     <section class="contact-section" id="contacto">
       <div class="container contact-grid">
         <div class="contact-info">
+          <img src="assets/img/contacto-cifel.png"
+     class="contact-banner"
+     alt="Inscribite en CIFEL">
           <span class="eyebrow">Inscribite hoy</span>
           <h2>¿Listo para <span class="accent">comenzar?</span></h2>
           <p>Completá tus datos para reservar tu vacante. Al finalizar serás dirigido a Mercado Pago para realizar el pago de la inscripción.</p>
@@ -2327,7 +2316,7 @@
                 <option>Inteligencia Artificial aplicada al Trabajo</option>
                 <option>Marketing Digital</option>
                 <option>Creación de Contenido para Redes Sociales</option>
-                <option>Organización de Eventos</option>
+                <option>Producción Integral de Eventos</option>
                 <option>Comunicación Estratégica y Campañas</option>
                 <option>Mozo de Salón y Atención Gastronómica</option>
 
