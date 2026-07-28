@@ -937,6 +937,17 @@
       background: linear-gradient(to top, rgba(3,42,68,.38), transparent 55%);
     }
 
+    .course-image--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--navy), var(--teal-dark));
+    }
+
+    .course-image--placeholder i {
+      color: rgba(255, 255, 255, .55);
+    }
+
     .course-tag {
       position: absolute;
       z-index: 2;
@@ -1796,6 +1807,60 @@
       color: var(--teal);
     }
 
+    .modal-modules-title {
+      margin: 24px 0 12px;
+      color: var(--navy);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .modal-modules {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .modal-modules li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 13px;
+      border-radius: 10px;
+      background: var(--ice);
+      color: var(--ink);
+      font-size: .76rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .modal-modules li span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: white;
+      background: var(--teal);
+      font-size: .64rem;
+      font-weight: 800;
+    }
+
+    .modal-note {
+      padding: 13px 15px;
+      border-radius: 10px;
+      background: var(--ice);
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.55;
+    }
+
     /* Responsive */
     @media (max-width: 1050px) {
       .main-nav {
@@ -2310,14 +2375,14 @@
             </div>
             <div class="course-body">
               <div class="course-meta">
-                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="clock-3" width="14"></i> A confirmar</span>
                 <span><i data-lucide="signal" width="14"></i> Inicial</span>
               </div>
               <h3>Community Manager</h3>
               <p>Aprendé a gestionar redes sociales, crear estrategias y potenciar marcas con herramientas profesionales.</p>
               <div class="course-footer">
                 <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
-                <button class="course-link" data-course="Community Manager" data-duration="4 semanas" data-mode="Presencial o virtual en vivo" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <button class="course-link" data-course-id="community-manager">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2329,14 +2394,14 @@
             </div>
             <div class="course-body">
               <div class="course-meta">
-                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
                 <span><i data-lucide="signal" width="14"></i> Inicial</span>
               </div>
               <h3>Comunicación Visual y Publicidad</h3>
               <p>Dominá estrategias de posicionamiento, publicidad online y ventas digitales.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
-                <button class="course-link" data-course="Comunicación Visual y Publicidad" data-duration="4 semanas" data-mode="Presencial o virtual en vivo" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="comunicacion-visual">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2348,14 +2413,14 @@
             </div>
             <div class="course-body">
               <div class="course-meta">
-                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
                 <span><i data-lucide="signal" width="14"></i> Inicial</span>
               </div>
               <h3>Creación de Contenido para Redes Sociales</h3>
               <p>Creá contenido atractivo para Instagram, Facebook, TikTok y otras plataformas.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
-                <button class="course-link" data-course="Creación de Contenido para Redes Sociales" data-duration="4 semanas" data-mode="Presencial" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <span class="course-mode">Clases 100% en línea</span>
+                <button class="course-link" data-course-id="creacion-contenido">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2367,14 +2432,14 @@
             </div>
             <div class="course-body">
               <div class="course-meta">
-                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
                 <span><i data-lucide="signal" width="14"></i> Inicial</span>
               </div>
               <h3>Producción Integral de Eventos</h3>
               <p>Planificá eventos sociales, institucionales y empresariales con una metodología profesional.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
-                <button class="course-link" data-course="Producción Integral de Eventos" data-duration="4 semanas" data-mode="Presencial o virtual en vivo" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="produccion-eventos">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2386,14 +2451,14 @@
             </div>
             <div class="course-body">
               <div class="course-meta">
-                <span><i data-lucide="clock-3" width="14"></i> 4 semanas</span>
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
                 <span><i data-lucide="signal" width="14"></i> Inicial</span>
               </div>
               <h3>Comunicación Estratégica y Campañas</h3>
               <p>Aprendé a comunicar, persuadir y desarrollar campañas con impacto.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
-                <button class="course-link" data-course="Comunicación Estratégica y Campañas" data-duration="4 semanas" data-mode="Presencial" data-level="Inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="comunicacion-estrategica">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2405,14 +2470,52 @@
             </div>
             <div class="course-body">
               <div class="course-meta">
-                <span><i data-lucide="clock-3" width="14"></i> 5 semanas</span>
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
                 <span><i data-lucide="signal" width="14"></i> Intermedio</span>
               </div>
               <h3>Mozo de Salón y Atención Gastronómica</h3>
               <p>Capacitación práctica para brindar un servicio gastronómico profesional y de excelencia.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales o Mixto -Clases virtuales y prácticas presenciales- </span>
-                <button class="course-link" data-course="Mozo de Salón y Atención Gastronómica" data-duration="5 semanas" data-mode="Presencial o mixto" data-level="Intermedio">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="mozo-salon">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="laboral" data-reveal style="--reveal-delay:0.48s">
+            <div class="course-image course-image--placeholder">
+              <i data-lucide="megaphone" width="46"></i>
+              <span class="course-tag">Nuevo</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Marketing Digital</h3>
+              <p>Diseñá estrategias de posicionamiento, comunicación y ventas para potenciar marcas y emprendimientos en el entorno digital.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases 100% en línea</span>
+                <button class="course-link" data-course-id="marketing-digital">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.56s">
+            <div class="course-image course-image--placeholder">
+              <i data-lucide="sparkles" width="46"></i>
+              <span class="course-tag">Nuevo</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Inteligencia Artificial aplicada al Trabajo</h3>
+              <p>Incorporá la Inteligencia Artificial a tus tareas diarias: optimizá procesos, redactá mejor y aumentá tu productividad.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="ia-trabajo">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2710,7 +2813,11 @@ Centro Integral de Formación Educativa y Laboral
           <div class="modal-fact"><span>Modalidad</span><strong id="modalMode"></strong></div>
           <div class="modal-fact"><span>Nivel</span><strong id="modalLevel"></strong></div>
         </div>
-        <p>Una capacitación dinámica con contenidos actualizados, actividades prácticas y acompañamiento profesional para convertir lo aprendido en resultados concretos.</p>
+        <p id="modalDescription"></p>
+        <div id="modalModulesWrap">
+          <div class="modal-modules-title">Módulos del curso</div>
+          <ol class="modal-modules" id="modalModules"></ol>
+        </div>
         <div class="modal-topics">
           <span><i data-lucide="circle-check" width="16"></i> Clases con especialistas</span>
           <span><i data-lucide="circle-check" width="16"></i> Material descargable</span>
@@ -2813,12 +2920,133 @@ Centro Integral de Formación Educativa y Laboral
         });
       });
 
+      // Datos reales de los programas (según "Cursos y programas CIFEL").
+      // El curso "Community Manager" todavía no tiene programa documentado.
+      const coursesData = {
+        "community-manager": {
+          title: "Community Manager",
+          duration: "A confirmar",
+          mode: "Presencial o virtual en vivo",
+          level: "Inicial",
+          description: "Todavía no tenemos cargado el programa detallado de este curso. Escribinos por WhatsApp o completá el formulario y te lo enviamos apenas esté disponible.",
+          modules: []
+        },
+        "marketing-digital": {
+          title: "Marketing Digital",
+          duration: "6 módulos · 16 horas totales",
+          mode: "En línea",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos y herramientas fundamentales del Marketing Digital para diseñar estrategias de posicionamiento, comunicación y comercialización en entornos digitales, integrando diferentes canales y plataformas para potenciar marcas, emprendimientos y organizaciones.",
+          modules: [
+            "Fundamentos del Marketing Digital",
+            "Público Objetivo y Estrategia Digital",
+            "Canales y Herramientas Digitales",
+            "Marketing en Buscadores y Publicidad Digital",
+            "Marketing de Contenidos y Analítica",
+            "Plan Integral de Marketing Digital"
+          ]
+        },
+        "ia-trabajo": {
+          title: "Inteligencia Artificial aplicada al Trabajo",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos y herramientas fundamentales para incorporar la Inteligencia Artificial en el ámbito laboral, optimizando procesos, mejorando la productividad y facilitando la resolución de tareas mediante el uso responsable y estratégico de herramientas basadas en IA.",
+          modules: [
+            "Introducción a la Inteligencia Artificial",
+            "Ingeniería de Prompts",
+            "IA Aplicada a la Productividad",
+            "IA para Marketing y Comunicación",
+            "IA para Distintos Ámbitos Laborales",
+            "Uso Responsable y Aplicación Profesional"
+          ]
+        },
+        "mozo-salon": {
+          title: "Mozo de Salón y Atención Gastronómica",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Intermedio",
+          description: "Brindar a los participantes los conocimientos, habilidades y técnicas fundamentales para desempeñarse como mozos de salón, ofreciendo un servicio gastronómico profesional, eficiente y orientado a la satisfacción del cliente, respetando normas de protocolo, higiene y seguridad alimentaria.",
+          modules: [
+            "Introducción al Servicio Gastronómico",
+            "Atención al Cliente",
+            "Organización del Salón",
+            "Servicio de Alimentos y Bebidas",
+            "Higiene, Seguridad y Gastronomía",
+            "Servicio para Eventos y Protocolo"
+          ]
+        },
+        "produccion-eventos": {
+          title: "Producción Integral de Eventos",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos y herramientas necesarias para planificar, coordinar y ejecutar eventos sociales, empresariales, institucionales y comunitarios, contemplando aspectos organizativos, logísticos, técnicos, comunicacionales y normativos que permitan desarrollar eventos exitosos de manera profesional.",
+          modules: [
+            "Introducción a la Producción de Eventos",
+            "Planificación y Logística",
+            "Diseño de Espacios y Experiencia del Público",
+            "Patrocinios, Protocolo y Comunicación del Evento",
+            "Seguridad, Higiene y Aspectos Normativos",
+            "Producción Integral de un Evento"
+          ]
+        },
+        "comunicacion-estrategica": {
+          title: "Comunicación Estratégica y Campañas",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar a los participantes las herramientas necesarias para diseñar, planificar y ejecutar estrategias de comunicación y campañas institucionales, comerciales, sociales o políticas, fortaleciendo el posicionamiento, la identidad y la reputación de organizaciones, empresas, emprendimientos y candidatos mediante acciones de alto impacto y bajo costo.",
+          modules: [
+            "Comunicación Estratégica",
+            "Branding y Posicionamiento",
+            "Planificación de Campañas",
+            "Marketing de Experiencias y Acciones de Alto Impacto",
+            "Responsabilidad Social Empresarial y Alianzas Estratégicas",
+            "Diseño Integral de Campañas"
+          ]
+        },
+        "creacion-contenido": {
+          title: "Creación de Contenido para Redes Sociales",
+          duration: "6 módulos · 16 horas totales",
+          mode: "En línea",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos y herramientas fundamentales para planificar, producir y adaptar contenidos digitales destinados a redes sociales, desarrollando criterios de creatividad, comunicación y narrativa visual orientados a fortalecer la presencia digital de marcas, emprendimientos y proyectos.",
+          modules: [
+            "Fundamentos de la Creación de Contenido",
+            "Planificación de Contenidos",
+            "Producción de Contenido Visual y Audiovisual",
+            "Storytelling y Comunicación Digital",
+            "Herramientas para Creadores de Contenido",
+            "Producción Integral de Contenido"
+          ]
+        },
+        "comunicacion-visual": {
+          title: "Comunicación Visual y Publicidad",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos fundamentales sobre comunicación visual y publicidad, desarrollando la capacidad de analizar, planificar y construir mensajes visuales efectivos orientados a la promoción de productos, servicios, marcas o proyectos, aplicando criterios de comunicación estratégica y persuasión.",
+          modules: [
+            "Fundamentos de la Comunicación Visual",
+            "Psicología de la Comunicación Publicitaria",
+            "Identidad y Posicionamiento",
+            "Estrategias Publicitarias",
+            "Comunicación en Entornos Digitales",
+            "Análisis de Campañas Publicitarias"
+          ]
+        }
+      };
+
       const modalOverlay = document.getElementById("courseModal");
       const modalClose = document.getElementById("modalClose");
       const modalTitle = document.getElementById("modalTitle");
       const modalDuration = document.getElementById("modalDuration");
       const modalMode = document.getElementById("modalMode");
       const modalLevel = document.getElementById("modalLevel");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalModulesWrap = document.getElementById("modalModulesWrap");
+      const modalModules = document.getElementById("modalModules");
       const modalCta = document.getElementById("modalCta");
       let previousFocus = null;
 
@@ -2835,11 +3063,28 @@ Centro Integral de Formación Educativa y Laboral
 
       document.querySelectorAll(".course-link").forEach(button => {
         button.addEventListener("click", () => {
+          const data = coursesData[button.dataset.courseId];
+          if (!data) return;
+
           previousFocus = button;
-          modalTitle.textContent = button.dataset.course;
-          modalDuration.textContent = button.dataset.duration;
-          modalMode.textContent = button.dataset.mode;
-          modalLevel.textContent = button.dataset.level;
+          modalTitle.textContent = data.title;
+          modalDuration.textContent = data.duration;
+          modalMode.textContent = data.mode;
+          modalLevel.textContent = data.level;
+
+          if (data.modules && data.modules.length) {
+            modalDescription.textContent = data.description;
+            modalModules.innerHTML = data.modules
+              .map((mod, i) => `<li><span>${i + 1}</span> ${mod}</li>`)
+              .join("");
+            modalModulesWrap.style.display = "";
+          } else {
+            modalDescription.textContent = "";
+            modalModules.innerHTML = "";
+            modalModulesWrap.style.display = "none";
+            modalDescription.innerHTML = `<span class="modal-note">${data.description}</span>`;
+          }
+
           modalOverlay.style.display = "grid";
           requestAnimationFrame(() => {
             modalOverlay.classList.add("open");
