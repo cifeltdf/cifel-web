@@ -3112,6 +3112,14 @@ Centro Integral de Formación Educativa y Laboral
   message: value => ""
 };
 
+      // ── URL de tu Google Apps Script (Web App) que guarda cada inscripción
+      // en una Google Sheet ANTES de redirigir a Mercado Pago. Reemplazá
+      // "TU_ID_DE_SCRIPT" por el ID real que te da Google al implementar el
+      // script (ver instrucciones aparte). Mientras esté sin reemplazar,
+      // el formulario sigue funcionando pero no se guardará nada en la Sheet.
+      const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWAvs95Ge9qqsBHKZ7-F0IzT-KOCuxK2HUEj7ZDsSgFjwPlxjeRzeYeh2gSl5pUfVnig/exec";
+      const MERCADOPAGO_URL = "https://mpago.la/1gxwoo6";
+
       contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
@@ -3133,13 +3141,27 @@ Centro Integral de Formación Educativa y Laboral
         }
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalLabel = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.style.opacity = ".75";
         submitBtn.style.cursor = "wait";
         submitBtn.innerHTML = "Redirigiendo a Mercado Pago...";
 
-        contactForm.submit();
+        const formData = new FormData(contactForm);
+
+        // 1) Guarda la inscripción en la Google Sheet (fuente de verdad,
+        //    no depende de que el email de FormSubmit esté activado).
+        fetch(SHEET_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        }).catch(() => {
+          // Si falla la red igual dejamos avanzar al pago para no
+          // frenarle la inscripción a nadie; el email de FormSubmit
+          // (una vez activado) queda como respaldo.
+        }).finally(() => {
+          // 2) Recién ahí redirige a Mercado Pago.
+          window.location.href = MERCADOPAGO_URL;
+        });
       });
 
       contactForm.querySelectorAll("input, select, textarea").forEach(input => {
