@@ -2697,6 +2697,7 @@
           <input type="hidden" name="_subject" value="Nueva consulta desde la web CIFEL">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://mpago.la/1gxwoo6">
           <div style="background:#eef9fb;border:1px solid #bfe9ef;border-radius:12px;padding:16px;margin:20px 0;">
 <strong>últimos días del VALOR BONIFICADO - PROMO AGOSTO</strong><br><br>
 
@@ -3138,9 +3139,7 @@ Centro Integral de Formación Educativa y Laboral
         submitBtn.style.cursor = "wait";
         submitBtn.innerHTML = "Redirigiendo a Mercado Pago...";
 
-        window.setTimeout(() => {
-          window.location.href = "https://mpago.la/1gxwoo6";
-        }, 450);
+        contactForm.submit();
       });
 
       contactForm.querySelectorAll("input, select, textarea").forEach(input => {
