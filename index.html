@@ -938,10 +938,15 @@
     }
 
     .course-image--placeholder {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, var(--navy), var(--teal-dark));
+    }
+
+    .course-image--placeholder::after {
+      display: none;
     }
 
     .course-image--placeholder i {
@@ -2327,6 +2332,7 @@
     </div>
 
 </div>
+      </div>
     </section>
 
     <section class="feature-strip" aria-label="Beneficios de CIFEL">
@@ -2381,7 +2387,7 @@
               <h3>Community Manager</h3>
               <p>Aprendé a gestionar redes sociales, crear estrategias y potenciar marcas con herramientas profesionales.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales o Clases virtuales en vivo</span>
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
                 <button class="course-link" data-course-id="community-manager">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
@@ -2400,7 +2406,7 @@
               <h3>Comunicación Visual y Publicidad</h3>
               <p>Dominá estrategias de posicionamiento, publicidad online y ventas digitales.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales</span>
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
                 <button class="course-link" data-course-id="comunicacion-visual">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
@@ -2457,7 +2463,7 @@
               <h3>Comunicación Estratégica y Campañas</h3>
               <p>Aprendé a comunicar, persuadir y desarrollar campañas con impacto.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales</span>
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
                 <button class="course-link" data-course-id="comunicacion-estrategica">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
@@ -2514,8 +2520,350 @@
               <h3>Inteligencia Artificial aplicada al Trabajo</h3>
               <p>Incorporá la Inteligencia Artificial a tus tareas diarias: optimizá procesos, redactá mejor y aumentá tu productividad.</p>
               <div class="course-footer">
-                <span class="course-mode">Clases Presenciales</span>
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
                 <button class="course-link" data-course-id="ia-trabajo">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.0s">
+            <div class="course-image">
+              <img src="assets/img/cursos/bartender-inicial-servicio-y-cocteleria-profesional.webp" alt="Bartender preparando coctelería profesional en la barra">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Bartender Inicial: Servicio y Coctelería Profesional</h3>
+              <p>Aprendé herramientas, técnicas de coctelería y servicio de barra para iniciarte como bartender profesional.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="bartender-inicial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.06s">
+            <div class="course-image">
+              <img src="assets/img/cursos/cocteleria-para-eventos-barra-produccion-y-servicio.webp" alt="Barra de coctelería preparada para un evento">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Coctelería para Eventos: Barra, Producción y Servicio</h3>
+              <p>Organizá y ejecutá barras de coctelería para eventos: producción en volumen, logística y servicio profesional.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="cocteleria-eventos">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.12s">
+            <div class="course-image">
+              <img src="assets/img/cursos/cocina-profesional-inicial.webp" alt="Cocina profesional con chef preparando alimentos">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Cocina Profesional Inicial</h3>
+              <p>Conocimientos y técnicas fundamentales de cocina profesional: higiene, cortes, cocción y organización de cocina.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases Presenciales</span>
+                <button class="course-link" data-course-id="cocina-profesional">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.18s">
+            <div class="course-image">
+              <img src="assets/img/cursos/community-manager-para-emprendedores.webp" alt="Emprendedor gestionando redes sociales de su negocio">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Community Manager para Emprendedores</h3>
+              <p>Gestioná redes sociales y estrategias de contenido pensadas para emprendimientos y pequeños negocios.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="community-manager-emprendedores">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.24s">
+            <div class="course-image">
+              <img src="assets/img/cursos/creacion-de-contenido-con-celular-para-negocios.webp" alt="Persona grabando contenido con el celular para su negocio">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Creación de Contenido con Celular para Negocios</h3>
+              <p>Producí fotos y videos con el celular para promocionar tu negocio en redes sociales.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="contenido-celular">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.3s">
+            <div class="course-image">
+              <img src="assets/img/cursos/fotos-de-producto-con-celular-para-vender-mas.webp" alt="Fotografía de producto tomada con celular">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Fotos de Producto con Celular para Vender Más</h3>
+              <p>Técnicas de iluminación, composición y edición para fotografiar productos y mejorar tus ventas online.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="fotos-producto">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="laboral" data-reveal style="--reveal-delay:0.36s">
+            <div class="course-image">
+              <img src="assets/img/cursos/meta-ads-publicidad-que-convierte.webp" alt="Gestión de campañas publicitarias en Meta Ads">
+              <span class="course-tag">Alta demanda</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Meta Ads: Publicidad que Convierte</h3>
+              <p>Creá, gestioná y optimizá campañas publicitarias en Facebook e Instagram orientadas a resultados.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="meta-ads">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.42s">
+            <div class="course-image">
+              <img src="assets/img/cursos/whatsapp-business-para-vender-mas.webp" alt="Atención a clientes por WhatsApp Business">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>WhatsApp Business para Vender Más</h3>
+              <p>Configurá y usá WhatsApp Business de forma profesional para vender y atender clientes.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="whatsapp-business">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.48s">
+            <div class="course-image">
+              <img src="assets/img/cursos/tu-presencia-digital-en-30-dias.webp" alt="Plan de presencia digital para un emprendimiento">
+              <span class="course-tag">Nuevo</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Tu Presencia Digital en 30 Días</h3>
+              <p>Un plan práctico y progresivo para construir la presencia digital de tu emprendimiento en 30 días.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="presencia-digital-30-dias">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="laboral" data-reveal style="--reveal-delay:0.54s">
+            <div class="course-image">
+              <img src="assets/img/cursos/como-vender-servicios-por-internet.webp" alt="Persona promocionando servicios profesionales por internet">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Cómo Vender Servicios por Internet</h3>
+              <p>Estrategias para promocionar y vender servicios profesionales a través de internet.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="vender-servicios-internet">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.6s">
+            <div class="course-image">
+              <img src="assets/img/cursos/auxiliar-administrativo-herramientas-para-empezar.webp" alt="Auxiliar administrativo trabajando en oficina">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Auxiliar Administrativo: Herramientas para Empezar</h3>
+              <p>Conocimientos y herramientas fundamentales para desempeñarte como auxiliar administrativo.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="auxiliar-administrativo">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.66s">
+            <div class="course-image">
+              <img src="assets/img/cursos/gestion-administrativa-profesional.webp" alt="Gestión administrativa profesional en una empresa">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Intermedio</span>
+              </div>
+              <h3>Gestión Administrativa Profesional</h3>
+              <p>Optimizá procesos organizacionales y mejorá la eficiencia en la gestión administrativa de empresas.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="gestion-administrativa">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.72s">
+            <div class="course-image">
+              <img src="assets/img/cursos/asesor-comercial-profesional.webp" alt="Asesor comercial atendiendo a un cliente">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Intermedio</span>
+              </div>
+              <h3>Asesor Comercial Profesional</h3>
+              <p>Técnicas de venta profesional: comunicación, manejo de objeciones y cierre efectivo.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="asesor-comercial">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.78s">
+            <div class="course-image">
+              <img src="assets/img/cursos/ventas-inmobiliarias-captacion-y-cierre.webp" alt="Agente inmobiliario mostrando una propiedad">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Ventas Inmobiliarias: Captación y Cierre</h3>
+              <p>Captación de propiedades y clientes, tasación básica y cierre de operaciones inmobiliarias.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="ventas-inmobiliarias">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="emprendimiento" data-reveal style="--reveal-delay:0.84s">
+            <div class="course-image">
+              <img src="assets/img/cursos/ventas-automotrices-profesionales.webp" alt="Vendedor mostrando un vehículo a un cliente">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Intermedio</span>
+              </div>
+              <h3>Ventas Automotrices Profesionales</h3>
+              <p>Técnicas específicas para la venta profesional de vehículos nuevos y usados.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="ventas-automotrices">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.9s">
+            <div class="course-image">
+              <img src="assets/img/cursos/diseno-grafico-para-emprendedores.webp" alt="Diseño gráfico aplicado a piezas de un emprendimiento">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Diseño Gráfico para Emprendedores</h3>
+              <p>Principios de diseño, color, tipografía e identidad visual aplicados a piezas para tu negocio.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="diseno-grafico">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:0.96s">
+            <div class="course-image">
+              <img src="assets/img/cursos/crea-tu-pagina-web-desde-cero.webp" alt="Creación de una página web para un negocio">
+              <span class="course-tag">Inicio septiembre</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Creá tu Página Web desde Cero</h3>
+              <p>Creá una página web funcional para tu negocio sin necesidad de conocimientos de programación.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="pagina-web-desde-cero">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="digital" data-reveal style="--reveal-delay:1.02s">
+            <div class="course-image">
+              <img src="assets/img/cursos/asistentes-virtuales-con-inteligencia-artificial.webp" alt="Asistente virtual utilizando herramientas de inteligencia artificial">
+              <span class="course-tag">Más solicitado</span>
+            </div>
+            <div class="course-body">
+              <div class="course-meta">
+                <span><i data-lucide="clock-3" width="14"></i> 6 módulos · 16 hs</span>
+                <span><i data-lucide="signal" width="14"></i> Inicial</span>
+              </div>
+              <h3>Asistentes Virtuales con Inteligencia Artificial</h3>
+              <p>Herramientas de IA para gestionar tareas administrativas y atención al cliente de forma remota.</p>
+              <div class="course-footer">
+                <span class="course-mode">Clases virtuales en vivo (sincrónico)</span>
+                <button class="course-link" data-course-id="asistentes-virtuales-ia">Ver programa <i data-lucide="arrow-right" width="15"></i></button>
               </div>
             </div>
           </article>
@@ -2684,28 +3032,61 @@
             <label for="interest">Curso</label>
             <select id="interest" name="interest">
               <option value="">Seleccioná un curso</option>
-              <option>Mozo de Salón y Atención Gastronómica</option>
+              <optgroup label="Gastronomía y Eventos (presencial)">
+                <option>Mozo de Salón y Atención Gastronómica</option>
+                <option>Producción Integral de Eventos</option>
+                <option>Bartender Inicial: Servicio y Coctelería Profesional</option>
+                <option>Coctelería para Eventos: Barra, Producción y Servicio</option>
+                <option>Cocina Profesional Inicial</option>
+              </optgroup>
+              <optgroup label="Gestión Digital y Social (virtual en vivo)">
+                <option>Community Manager</option>
+                <option>Community Manager para Emprendedores</option>
+                <option>Creación de Contenido para Redes Sociales</option>
+                <option>Creación de Contenido con Celular para Negocios</option>
+                <option>Fotos de Producto con Celular para Vender Más</option>
+                <option>WhatsApp Business para Vender Más</option>
+                <option>Tu Presencia Digital en 30 Días</option>
+                <option>Diseño Gráfico para Emprendedores</option>
+                <option>Creá tu Página Web desde Cero</option>
+                <option>Asistentes Virtuales con Inteligencia Artificial</option>
+              </optgroup>
+              <optgroup label="Publicidad y Marketing (virtual en vivo)">
+                <option>Comunicación Visual y Publicidad</option>
+                <option>Comunicación Estratégica y Campañas</option>
+                <option>Marketing Digital</option>
+                <option>Meta Ads: Publicidad que Convierte</option>
+                <option>Cómo Vender Servicios por Internet</option>
+              </optgroup>
+              <optgroup label="Formación para el Trabajo (virtual en vivo)">
+                <option>Inteligencia Artificial aplicada al Trabajo</option>
+                <option>Auxiliar Administrativo: Herramientas para Empezar</option>
+                <option>Gestión Administrativa Profesional</option>
+                <option>Asesor Comercial Profesional</option>
+                <option>Ventas Inmobiliarias: Captación y Cierre</option>
+                <option>Ventas Automotrices Profesionales</option>
+              </optgroup>
             </select>
             <span class="field-error"></span>
           </div>
 
           <div class="field">
-            <label for="message">DETALLES TURNO MAÑANA Y TURNO TARDE. MARTES Y JUEVES DE 09:00hs a 11:00hs MARTES Y JUEVES DE 15:30hs a 17:30hs</label>
+            <label for="message">Aclaración para inscriptos a Mozo de Salón (inicia el 11 de agosto): turno mañana martes y jueves de 09:00 a 11:00hs, turno tarde martes y jueves de 15:30 a 17:30hs. El resto de las capacitaciones inician en septiembre.</label>
             <textarea id="message" name="message" placeholder="Si querés, dejanos alguna observación..."></textarea>
             <span class="field-error"></span>
           </div>
           <input type="hidden" name="_subject" value="Nueva consulta desde la web CIFEL">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://mpago.la/1gxwoo6">
-          <div style="background:#eef9fb;border:1px solid #bfe9ef;border-radius:12px;padding:16px;margin:20px 0;">
+          <input type="hidden" name="_next" id="nextRedirect" value="https://mpago.la/1gxwoo6">
+          <div id="pricingBox" style="background:#eef9fb;border:1px solid #bfe9ef;border-radius:12px;padding:16px;margin:20px 0;">
 <strong>últimos días del VALOR BONIFICADO - PROMO AGOSTO</strong><br><br>
 
 ✔ Matrícula anual incluida<br>
 ✔ Certificación Nacional<br>
 ✔ Acceso a la capacitación elegida<br><br>
 
-<strong>Total a pagar: $75.000</strong>
+<strong>Total a pagar: <span id="totalAmount">$80.000</span></strong>
 </div>
 
           <button class="btn btn-primary" type="submit">Continuar con el pago <i data-lucide="send" width="17"></i></button>
@@ -2920,7 +3301,7 @@ Centro Integral de Formación Educativa y Laboral
         "community-manager": {
           title: "Community Manager",
           duration: "6 módulos · 16 horas totales",
-          mode: "Presencial o virtual en vivo",
+          mode: "Virtual sincrónico - en vivo",
           level: "Inicial",
           description: "Todavía no tenemos cargado el programa detallado de este curso. Escribinos por WhatsApp o completá el formulario y te lo enviamos apenas esté disponible.",
           modules: []
@@ -2928,9 +3309,9 @@ Centro Integral de Formación Educativa y Laboral
         "marketing-digital": {
           title: "Marketing Digital",
           duration: "6 módulos · 16 horas totales",
-          mode: "En línea - virtual en vivo",
+          mode: "Virtual sincrónico - en vivo",
           level: "Inicial",
-          description: "Brindar a los participantes los conocimientos y herramientas fundamentales del Marketing Digital para diseñar estrategias de posicionamiento, comunicación y comercialización en entornos digitales, integrando diferentes canales y plataformas para potenciar marcas, emprendimientos y organizaciones.",
+          description: "Brindar a los participantes los conocimientos y herramientas fundamentales del Marketing Digital para diseñar estrategias de posicionamiento, comunicación y comercialización en entornos digitales, integrando diferentes canales y plataformas para potenciar marcas, emprendimientos y organizaciones. Inicio: septiembre 2026.",
           modules: [
             "Fundamentos del Marketing Digital",
             "Público Objetivo y Estrategia Digital",
@@ -2943,9 +3324,9 @@ Centro Integral de Formación Educativa y Laboral
         "ia-trabajo": {
           title: "Inteligencia Artificial aplicada al Trabajo",
           duration: "6 módulos · 16 horas totales",
-          mode: "Presencial",
+          mode: "Virtual sincrónico - en vivo",
           level: "Inicial",
-          description: "Brindar a los participantes los conocimientos y herramientas fundamentales para incorporar la Inteligencia Artificial en el ámbito laboral, optimizando procesos, mejorando la productividad y facilitando la resolución de tareas mediante el uso responsable y estratégico de herramientas basadas en IA.",
+          description: "Brindar a los participantes los conocimientos y herramientas fundamentales para incorporar la Inteligencia Artificial en el ámbito laboral, optimizando procesos, mejorando la productividad y facilitando la resolución de tareas mediante el uso responsable y estratégico de herramientas basadas en IA. Inicio: septiembre 2026.",
           modules: [
             "Introducción a la Inteligencia Artificial",
             "Ingeniería de Prompts",
@@ -2960,7 +3341,7 @@ Centro Integral de Formación Educativa y Laboral
           duration: "6 módulos · 16 horas totales",
           mode: "Presencial",
           level: "Intermedio",
-          description: "Brindar a los participantes los conocimientos, habilidades y técnicas fundamentales para desempeñarse como mozos de salón, ofreciendo un servicio gastronómico profesional, eficiente y orientado a la satisfacción del cliente, respetando normas de protocolo, higiene y seguridad alimentaria.",
+          description: "Brindar a los participantes los conocimientos, habilidades y técnicas fundamentales para desempeñarse como mozos de salón, ofreciendo un servicio gastronómico profesional, eficiente y orientado a la satisfacción del cliente, respetando normas de protocolo, higiene y seguridad alimentaria. Inicio: 11 de agosto de 2026.",
           modules: [
             "Introducción al Servicio Gastronómico",
             "Atención al Cliente",
@@ -2975,7 +3356,7 @@ Centro Integral de Formación Educativa y Laboral
           duration: "6 módulos · 16 horas totales",
           mode: "Presencial",
           level: "Inicial",
-          description: "Brindar a los participantes los conocimientos y herramientas necesarias para planificar, coordinar y ejecutar eventos sociales, empresariales, institucionales y comunitarios, contemplando aspectos organizativos, logísticos, técnicos, comunicacionales y normativos que permitan desarrollar eventos exitosos de manera profesional.",
+          description: "Brindar a los participantes los conocimientos y herramientas necesarias para planificar, coordinar y ejecutar eventos sociales, empresariales, institucionales y comunitarios, contemplando aspectos organizativos, logísticos, técnicos, comunicacionales y normativos que permitan desarrollar eventos exitosos de manera profesional. Inicio: septiembre 2026.",
           modules: [
             "Introducción a la Producción de Eventos",
             "Planificación y Logística",
@@ -2988,9 +3369,9 @@ Centro Integral de Formación Educativa y Laboral
         "comunicacion-estrategica": {
           title: "Comunicación Estratégica y Campañas",
           duration: "6 módulos · 16 horas totales",
-          mode: "Presencial",
+          mode: "Virtual sincrónico - en vivo",
           level: "Inicial",
-          description: "Brindar a los participantes las herramientas necesarias para diseñar, planificar y ejecutar estrategias de comunicación y campañas institucionales, comerciales, sociales o políticas, fortaleciendo el posicionamiento, la identidad y la reputación de organizaciones, empresas, emprendimientos y candidatos mediante acciones de alto impacto y bajo costo.",
+          description: "Brindar a los participantes las herramientas necesarias para diseñar, planificar y ejecutar estrategias de comunicación y campañas institucionales, comerciales, sociales o políticas, fortaleciendo el posicionamiento, la identidad y la reputación de organizaciones, empresas, emprendimientos y candidatos mediante acciones de alto impacto y bajo costo. Inicio: septiembre 2026.",
           modules: [
             "Comunicación Estratégica",
             "Branding y Posicionamiento",
@@ -3003,9 +3384,9 @@ Centro Integral de Formación Educativa y Laboral
         "creacion-contenido": {
           title: "Creación de Contenido para Redes Sociales",
           duration: "6 módulos · 16 horas totales",
-          mode: "En línea - virtual en vivo",
+          mode: "Virtual sincrónico - en vivo",
           level: "Inicial",
-          description: "Brindar a los participantes los conocimientos y herramientas fundamentales para planificar, producir y adaptar contenidos digitales destinados a redes sociales, desarrollando criterios de creatividad, comunicación y narrativa visual orientados a fortalecer la presencia digital de marcas, emprendimientos y proyectos.",
+          description: "Brindar a los participantes los conocimientos y herramientas fundamentales para planificar, producir y adaptar contenidos digitales destinados a redes sociales, desarrollando criterios de creatividad, comunicación y narrativa visual orientados a fortalecer la presencia digital de marcas, emprendimientos y proyectos. Inicio: septiembre 2026.",
           modules: [
             "Fundamentos de la Creación de Contenido",
             "Planificación de Contenidos",
@@ -3018,9 +3399,9 @@ Centro Integral de Formación Educativa y Laboral
         "comunicacion-visual": {
           title: "Comunicación Visual y Publicidad",
           duration: "6 módulos · 16 horas totales",
-          mode: "Presencial o virtual en vivo",
+          mode: "Virtual sincrónico - en vivo",
           level: "Inicial",
-          description: "Brindar a los participantes los conocimientos fundamentales sobre comunicación visual y publicidad, desarrollando la capacidad de analizar, planificar y construir mensajes visuales efectivos orientados a la promoción de productos, servicios, marcas o proyectos, aplicando criterios de comunicación estratégica y persuasión.",
+          description: "Brindar a los participantes los conocimientos fundamentales sobre comunicación visual y publicidad, desarrollando la capacidad de analizar, planificar y construir mensajes visuales efectivos orientados a la promoción de productos, servicios, marcas o proyectos, aplicando criterios de comunicación estratégica y persuasión. Inicio: septiembre 2026.",
           modules: [
             "Fundamentos de la Comunicación Visual",
             "Psicología de la Comunicación Publicitaria",
@@ -3028,6 +3409,276 @@ Centro Integral de Formación Educativa y Laboral
             "Estrategias Publicitarias",
             "Comunicación en Entornos Digitales",
             "Análisis de Campañas Publicitarias"
+          ]
+        },
+        "bartender-inicial": {
+          title: "Bartender Inicial: Servicio y Coctelería Profesional",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos y técnicas fundamentales para el servicio de barra y la elaboración de cócteles clásicos, desarrollando habilidades técnicas, de higiene y de atención al cliente propias del oficio de bartender. Inicio: septiembre 2026.",
+          modules: [
+            "Introducción al Mundo del Bartending",
+            "Herramientas, Insumos y Equipamiento de Barra",
+            "Técnicas Básicas de Coctelería",
+            "Cócteles Clásicos",
+            "Servicio, Atención al Cliente y Presentación",
+            "Gestión Básica de una Barra"
+          ]
+        },
+        "cocteleria-eventos": {
+          title: "Coctelería para Eventos: Barra, Producción y Servicio",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar herramientas para la organización y ejecución de barras de coctelería en eventos, integrando la producción, la logística y el servicio a gran escala. Inicio: septiembre 2026.",
+          modules: [
+            "Introducción a la Coctelería para Eventos",
+            "Planificación y Presupuesto",
+            "Producción de Bebidas en Volumen",
+            "Logística y Montaje de Barra",
+            "Servicio en Eventos",
+            "Gestión Comercial del Bartender de Eventos"
+          ]
+        },
+        "cocina-profesional": {
+          title: "Cocina Profesional Inicial",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Presencial",
+          level: "Inicial",
+          description: "Brindar a los participantes los conocimientos y técnicas fundamentales de la cocina profesional, desarrollando habilidades básicas de manipulación de alimentos, cocción y organización de cocina. Inicio: septiembre 2026.",
+          modules: [
+            "Introducción a la Cocina Profesional",
+            "Higiene y Seguridad Alimentaria",
+            "Herramientas, Utensilios y Equipamiento",
+            "Técnicas de Corte y Cocción",
+            "Preparaciones Básicas",
+            "Organización y Mise en Place"
+          ]
+        },
+        "community-manager-emprendedores": {
+          title: "Community Manager para Emprendedores",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar herramientas para la gestión profesional de redes sociales orientadas a emprendimientos y pequeños negocios, desarrollando estrategias de contenido, comunicación y crecimiento digital. Inicio: septiembre 2026.",
+          modules: [
+            "Rol del Community Manager",
+            "Redes Sociales y su Ecosistema",
+            "Planificación de Contenidos",
+            "Producción y Programación de Contenido",
+            "Comunidad y Atención al Cliente Digital",
+            "Métricas y Estrategia Digital"
+          ]
+        },
+        "contenido-celular": {
+          title: "Creación de Contenido con Celular para Negocios",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar herramientas prácticas para la creación de contenido audiovisual con el celular orientado a la promoción de negocios y emprendimientos. Inicio: septiembre 2026.",
+          modules: [
+            "El Celular como Herramienta de Contenido",
+            "Composición e Iluminación",
+            "Fotografía para Negocios",
+            "Video para Redes Sociales",
+            "Producción de Contenido para Marca",
+            "Publicación y Estrategia de Contenido"
+          ]
+        },
+        "fotos-producto": {
+          title: "Fotos de Producto con Celular para Vender Más",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar técnicas para la fotografía de productos utilizando el celular, mejorando la presentación de artículos para la venta online. Inicio: septiembre 2026.",
+          modules: [
+            "Fundamentos de la Fotografía de Producto",
+            "Iluminación para Producto",
+            "Armado de Set Fotográfico",
+            "Composición y Ángulos",
+            "Edición de Fotos de Producto",
+            "Optimización para Venta Online"
+          ]
+        },
+        "meta-ads": {
+          title: "Meta Ads: Publicidad que Convierte",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar conocimientos para la creación, gestión y optimización de campañas publicitarias en Meta (Facebook e Instagram) orientadas a resultados. Inicio: septiembre 2026.",
+          modules: [
+            "Introducción a Meta Ads",
+            "Definición de Objetivos y Públicos",
+            "Creación de Campañas",
+            "Diseño de Anuncios Efectivos",
+            "Píxel de Meta y Seguimiento",
+            "Análisis y Optimización de Campañas"
+          ]
+        },
+        "whatsapp-business": {
+          title: "WhatsApp Business para Vender Más",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar herramientas para el uso profesional de WhatsApp Business como canal de ventas y atención al cliente. Inicio: septiembre 2026.",
+          modules: [
+            "Configuración de WhatsApp Business",
+            "Herramientas de Gestión",
+            "Atención al Cliente por WhatsApp",
+            "Ventas a través de WhatsApp",
+            "WhatsApp como Canal de Marketing",
+            "Fidelización y Buenas Prácticas"
+          ]
+        },
+        "presencia-digital-30-dias": {
+          title: "Tu Presencia Digital en 30 Días",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar un plan práctico y progresivo para construir la presencia digital de un emprendimiento en 30 días, integrando herramientas y estrategias esenciales. Inicio: septiembre 2026.",
+          modules: [
+            "Diagnóstico de Presencia Digital",
+            "Identidad Digital de Marca",
+            "Optimización de Perfiles y Canales",
+            "Plan de Contenidos Inicial",
+            "Comunicación y Primeros Contactos",
+            "Plan de Acción a 30 Días"
+          ]
+        },
+        "vender-servicios-internet": {
+          title: "Cómo Vender Servicios por Internet",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar herramientas y estrategias para la promoción y venta de servicios profesionales a través de internet. Inicio: septiembre 2026.",
+          modules: [
+            "Particularidades de la Venta de Servicios",
+            "Definición de la Propuesta de Valor",
+            "Canales Digitales para Promoción",
+            "Captación de Clientes",
+            "Venta Consultiva de Servicios",
+            "Gestión Comercial y Fidelización"
+          ]
+        },
+        "auxiliar-administrativo": {
+          title: "Auxiliar Administrativo: Herramientas para Empezar",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar los conocimientos y herramientas fundamentales para desempeñarse como auxiliar administrativo en organizaciones y empresas. Inicio: septiembre 2026.",
+          modules: [
+            "La Función Administrativa",
+            "Herramientas Ofimáticas Básicas",
+            "Documentación Administrativa",
+            "Organización y Gestión del Tiempo",
+            "Atención al Cliente y Comunicación",
+            "Introducción a la Gestión Digital"
+          ]
+        },
+        "gestion-administrativa": {
+          title: "Gestión Administrativa Profesional",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Intermedio",
+          description: "Brindar conocimientos avanzados de gestión administrativa para optimizar procesos organizacionales y mejorar la eficiencia en la gestión de empresas. Inicio: septiembre 2026.",
+          modules: [
+            "Procesos Administrativos en la Organización",
+            "Gestión Documental y Archivo",
+            "Planificación y Control Administrativo",
+            "Elaboración de Informes",
+            "Comunicación Organizacional",
+            "Gestión de Recursos Humanos y Proveedores"
+          ]
+        },
+        "asesor-comercial": {
+          title: "Asesor Comercial Profesional",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Intermedio",
+          description: "Brindar herramientas y técnicas de venta profesional para el desempeño eficaz como asesor comercial en distintos rubros. Inicio: septiembre 2026.",
+          modules: [
+            "El Rol del Asesor Comercial",
+            "Conocimiento del Producto y del Cliente",
+            "Comunicación y Técnicas de Venta",
+            "Manejo de Objeciones",
+            "Cierre de Ventas",
+            "Fidelización y Gestión Comercial"
+          ]
+        },
+        "ventas-inmobiliarias": {
+          title: "Ventas Inmobiliarias: Captación y Cierre",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar herramientas específicas para la captación de propiedades y clientes, y el cierre efectivo de operaciones inmobiliarias. Inicio: septiembre 2026.",
+          modules: [
+            "El Mercado Inmobiliario",
+            "Captación de Propiedades",
+            "Valuación y Presentación de Propiedades",
+            "Captación de Clientes Compradores",
+            "Negociación Inmobiliaria",
+            "Cierre de Operaciones Inmobiliarias"
+          ]
+        },
+        "ventas-automotrices": {
+          title: "Ventas Automotrices Profesionales",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Intermedio",
+          description: "Brindar herramientas y técnicas específicas para el desempeño profesional en la venta de vehículos nuevos y usados. Inicio: septiembre 2026.",
+          modules: [
+            "El Mercado Automotor y el Vendedor Profesional",
+            "Conocimiento del Producto",
+            "Atención y Asesoramiento Comercial",
+            "Prueba de Manejo y Experiencia de Compra",
+            "Negociación y Cierre de Venta",
+            "Postventa y Fidelización"
+          ]
+        },
+        "diseno-grafico": {
+          title: "Diseño Gráfico para Emprendedores",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar conocimientos y herramientas básicas de diseño gráfico para la creación de piezas visuales aplicadas a emprendimientos y pequeños negocios. Inicio: septiembre 2026.",
+          modules: [
+            "Fundamentos del Diseño Gráfico",
+            "Color y Tipografía",
+            "Identidad Visual de Marca",
+            "Herramientas de Diseño",
+            "Piezas Gráficas para Redes Sociales",
+            "Aplicación en Piezas Comerciales"
+          ]
+        },
+        "pagina-web-desde-cero": {
+          title: "Creá tu Página Web desde Cero",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar los conocimientos necesarios para crear una página web funcional para un negocio o emprendimiento, sin necesidad de conocimientos previos de programación. Inicio: septiembre 2026.",
+          modules: [
+            "Introducción a la Presencia Web",
+            "Planificación del Sitio Web",
+            "Plataformas de Creación sin Código",
+            "Diseño de Secciones del Sitio",
+            "Optimización del Sitio Web",
+            "Publicación y Mantenimiento"
+          ]
+        },
+        "asistentes-virtuales-ia": {
+          title: "Asistentes Virtuales con Inteligencia Artificial",
+          duration: "6 módulos · 16 horas totales",
+          mode: "Virtual sincrónico - en vivo",
+          level: "Inicial",
+          description: "Brindar herramientas para el desempeño como asistente virtual utilizando herramientas de Inteligencia Artificial que optimicen la gestión de tareas administrativas y de atención remota. Inicio: septiembre 2026.",
+          modules: [
+            "El Rol del Asistente Virtual",
+            "Inteligencia Artificial para la Gestión de Tareas",
+            "Redacción y Comunicación con IA",
+            "Organización y Productividad Digital",
+            "Atención al Cliente Remota",
+            "Buenas Prácticas y Ética Profesional"
           ]
         }
       };
@@ -3112,13 +3763,51 @@ Centro Integral de Formación Educativa y Laboral
   message: value => ""
 };
 
+      // ── Cursos presenciales (más caros) y sus datos de pago.
+      // Todo lo que NO esté en esta lista se considera virtual y usa el
+      // link/precio de $40.000.
+      const PRESENCIAL_COURSES = new Set([
+        "Mozo de Salón y Atención Gastronómica",
+        "Producción Integral de Eventos",
+        "Bartender Inicial: Servicio y Coctelería Profesional",
+        "Coctelería para Eventos: Barra, Producción y Servicio",
+        "Cocina Profesional Inicial"
+      ]);
+
+      const MP_PRESENCIAL_URL = "https://mpago.la/1gxwoo6";
+      const MP_VIRTUAL_URL = "https://mpago.la/1xfsXGa";
+      const PRICE_PRESENCIAL = "$80.000";
+      const PRICE_VIRTUAL = "$40.000";
+
+      const interestSelect = document.getElementById("interest");
+      const totalAmountEl = document.getElementById("totalAmount");
+      const nextRedirectInput = document.getElementById("nextRedirect");
+
+      function currentModality() {
+        const selected = interestSelect.value;
+        return (selected && PRESENCIAL_COURSES.has(selected)) ? "presencial" : "virtual";
+      }
+
+      function updatePricing() {
+        const modality = currentModality();
+        if (modality === "presencial") {
+          totalAmountEl.textContent = PRICE_PRESENCIAL;
+          nextRedirectInput.value = MP_PRESENCIAL_URL;
+        } else {
+          totalAmountEl.textContent = PRICE_VIRTUAL;
+          nextRedirectInput.value = MP_VIRTUAL_URL;
+        }
+      }
+
+      interestSelect.addEventListener("change", updatePricing);
+      updatePricing();
+
       // ── URL de tu Google Apps Script (Web App) que guarda cada inscripción
       // en una Google Sheet ANTES de redirigir a Mercado Pago. Reemplazá
       // "TU_ID_DE_SCRIPT" por el ID real que te da Google al implementar el
       // script (ver instrucciones aparte). Mientras esté sin reemplazar,
       // el formulario sigue funcionando pero no se guardará nada en la Sheet.
       const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwDbGMr31kQjxWqfpk5f9xQDjTXaIY2N9gtBsICmRDeWNmaTfviZmt1vIYcVBJj1dCM/exec";
-      const MERCADOPAGO_URL = "https://mpago.la/1gxwoo6";
 
       contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
@@ -3148,6 +3837,11 @@ Centro Integral de Formación Educativa y Laboral
 
         const formData = new FormData(contactForm);
 
+        // Determina el link de Mercado Pago según la modalidad del curso
+        // elegido: presencial ($80.000, link original) o virtual ($40.000,
+        // link nuevo).
+        const redirectUrl = currentModality() === "presencial" ? MP_PRESENCIAL_URL : MP_VIRTUAL_URL;
+
         // 1) Guarda la inscripción en la Google Sheet (fuente de verdad,
         //    no depende de que el email de FormSubmit esté activado).
         fetch(SHEET_ENDPOINT, {
@@ -3159,8 +3853,8 @@ Centro Integral de Formación Educativa y Laboral
           // frenarle la inscripción a nadie; el email de FormSubmit
           // (una vez activado) queda como respaldo.
         }).finally(() => {
-          // 2) Recién ahí redirige a Mercado Pago.
-          window.location.href = MERCADOPAGO_URL;
+          // 2) Recién ahí redirige a Mercado Pago (link según modalidad).
+          window.location.href = redirectUrl;
         });
       });
 
